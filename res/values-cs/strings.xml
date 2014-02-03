@@ -2,5 +2,9 @@
 <resources>
 
     <string name="app_name">Najdi mě</string>
-
+    <string name="open_last">Otevři poslední</string>
+    <string name="longitude">délka</string>
+    <string name="latitude">šířka</string>
+    <string name="altitude">výška</string>
+    <string name="accuracy">přesnost</string>
 </resources>

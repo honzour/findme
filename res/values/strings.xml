@@ -2,9 +2,7 @@
 <resources>
 
     <string name="app_name">Find me</string>
-    
     <string name="open_last">Open last</string>
-    
     <string name="longitude">longitude</string>
     <string name="latitude">latitude</string>
     <string name="altitude">altitude</string>
