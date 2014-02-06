@@ -13,17 +13,22 @@ import android.widget.Toast;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 public class MainActivity extends Activity {
 	
-	LocationManager mlocManager;
-	LocationListener mlocListener;
-	Location mLocation = null;
+	protected LocationManager mlocManager;
+	protected LocationListener mlocListener;
+	protected Location mLocation = null;
 	
-	TextView mLongitude;
-	TextView mLatitude;
-	TextView mAltitude;
-	TextView mAccuracy;
+	protected TextView mLongitude;
+	protected TextView mLatitude;
+	protected TextView mAltitude;
+	protected TextView mAccuracy;
+	
+	protected static final String LAST_POSITION_PREFS = "LAST_POSITION_PREFS";
+	protected static final String LAST_POSITION_LONG = "LAST_POSITION_LONG";
+	protected static final String LAST_POSITION_LAT = "LAST_POSITION_LAT";
 	
 	protected void toast(String text) {
 		Toast.makeText(this, text, Toast.LENGTH_LONG).show();
@@ -53,6 +58,12 @@ public class MainActivity extends Activity {
 				mAccuracy.setText(String.valueOf(location.getAccuracy()));
 			
 				mLocation = location;
+				
+				SharedPreferences prefs = getSharedPreferences(LAST_POSITION_PREFS, Context.MODE_PRIVATE);
+				SharedPreferences.Editor e = prefs.edit();
+				e.putString(LAST_POSITION_LONG, String.valueOf(location.getLongitude()));
+				e.putString(LAST_POSITION_LAT, String.valueOf(location.getLatitude()));
+				e.commit();
 			}
 
 			@Override
@@ -84,9 +95,22 @@ public class MainActivity extends Activity {
         openButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				
+				double lon, lat;
 			    if (mLocation == null)
-			    	return;
-			    String uri = String.format(Locale.ENGLISH, "geo:%f,%f", mLocation.getLatitude(), mLocation.getLongitude());
+			    {
+			    	SharedPreferences prefs = getSharedPreferences(LAST_POSITION_PREFS, Context.MODE_PRIVATE);
+			    	lat = Double.valueOf(prefs.getString(LAST_POSITION_LAT, "49.98480"));
+			    	lon = Double.valueOf(prefs.getString(LAST_POSITION_LONG, "14.360617"));
+			    	
+			    }
+			    else
+			    {
+			    	lon = mLocation.getLongitude();
+			    	lat = mLocation.getLatitude();
+			    }
+			    	
+			    String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, lon);
 			    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
 			    MainActivity.this.startActivity(intent);
 			}
