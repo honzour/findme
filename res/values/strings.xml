@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<!-- Main Activity -->
     <string name="app_name">Find me</string>
+    <string name="my_position">My Position</string>
+    <string name="ask_settings">Ask Settins</string>
+    <string name="reply_settings">Reply Setings</string>
+    
+    <!-- My Position -->
     <string name="open_last">Open last</string>
     <string name="longitude">longitude</string>
     <string name="latitude">latitude</string>
     <string name="altitude">altitude</string>
     <string name="accuracy">accuracy</string>
+    
 
 </resources>

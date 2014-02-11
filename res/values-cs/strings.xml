@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Main Activity -->
     <string name="app_name">Najdi mě</string>
+    <string name="my_position">Moje pozice</string>
+    <string name="ask_settings">Nastavení otázek</string>
+    <string name="reply_settings">Nastavení odpovědí</string>
+    
+    <!-- My Position -->
     <string name="open_last">Otevři poslední</string>
     <string name="longitude">délka</string>
     <string name="latitude">šířka</string>
     <string name="altitude">výška</string>
     <string name="accuracy">přesnost</string>
+    
 </resources>

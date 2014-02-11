@@ -31,6 +31,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="cz.honza.findme.AskActivity"
+            android:label="@string/ask_settings" >
+        </activity>
+        <activity
+            android:name="cz.honza.findme.ReplyActivity"
+            android:label="@string/reply_settings" >
+        </activity>
+        <activity
+            android:name="cz.honza.findme.MyPositionActivity"
+            android:label="@string/my_position" >
+        </activity>
     </application>
 
 </manifest>

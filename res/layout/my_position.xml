@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFF">
+
+    <Button
+        android:id="@+id/main_find_me"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name" />
+    
+    <Button
+        android:id="@+id/main_open_last"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/open_last" />
+    
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="@string/longitude"
+                />
+            <TextView
+                android:id="@+id/main_longitude"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="@string/latitude"
+                />
+            <TextView
+                android:id="@+id/main_latitude"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="@string/altitude"
+                />
+            <TextView
+                android:id="@+id/main_altitude"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="@string/accuracy"
+                />
+            <TextView
+                android:id="@+id/main_accuracy"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+                />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

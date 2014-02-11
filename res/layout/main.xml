@@ -7,68 +7,21 @@
     android:background="#FFF">
 
     <Button
-        android:id="@+id/main_find_me"
+        android:id="@+id/my_position"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name" />
+        android:text="@string/my_position" />
     
     <Button
-        android:id="@+id/main_open_last"
+        android:id="@+id/ask_settings"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/open_last" />
+        android:text="@string/ask_settings" />
     
-    <TableLayout
+    <Button
+        android:id="@+id/reply_settings"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:text="@string/longitude"
-                />
-            <TextView
-                android:id="@+id/main_longitude"
-                android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-                />
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:text="@string/latitude"
-                />
-            <TextView
-                android:id="@+id/main_latitude"
-                android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-                />
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:text="@string/altitude"
-                />
-            <TextView
-                android:id="@+id/main_altitude"
-                android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-                />
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:text="@string/accuracy"
-                />
-            <TextView
-                android:id="@+id/main_accuracy"
-                android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-                />
-        </TableRow>
-    </TableLayout>
-
+        android:layout_height="wrap_content"
+        android:text="@string/reply_settings" />
+    
 </LinearLayout>
