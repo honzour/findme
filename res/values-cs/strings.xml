@@ -14,4 +14,11 @@
     <string name="altitude">výška</string>
     <string name="accuracy">přesnost</string>
     
+    <!-- Reply -->
+    <string-array name="reply_mode">
+        <item>Odpovídej normálně</item>
+        <item>Neodpovídej nic</item>
+        <item>Odpovídej \"Nevím\"</item>
+    </string-array>
+    
 </resources>

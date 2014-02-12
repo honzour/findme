@@ -7,5 +7,10 @@
 		android:layout_width="fill_parent"
     	android:layout_height="fill_parent"
     	android:orientation="vertical">
+    	<Spinner
+    	    android:id="@+id/reply_mode"
+    	    android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    	    />
 	</LinearLayout>
 </ScrollView>

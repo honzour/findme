@@ -12,6 +12,12 @@
     <string name="latitude">latitude</string>
     <string name="altitude">altitude</string>
     <string name="accuracy">accuracy</string>
-    
+
+    <!-- Reply -->
+    <string-array name="reply_mode">
+        <item>Reply requests</item>
+        <item>Ignore requests</item>
+        <item>Reply \"I don\'t know\"</item>
+    </string-array>
 
 </resources>
