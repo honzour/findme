@@ -19,5 +19,7 @@
         <item>Ignore requests</item>
         <item>Reply \"I don\'t know\"</item>
     </string-array>
+    
+    <string name="reply_mode_reply">If a query arrives by a push notification or SMS, program will repect folowing rules. By default it will turn on GPS, get your position and send it to an asking device by a push or SMS.</string>
 
 </resources>
