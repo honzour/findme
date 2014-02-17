@@ -9,6 +9,11 @@ import android.widget.TextView;
 import android.app.Activity;
 
 public class ReplyActivity extends Activity {
+	
+	public static final String REPLY_SETTINGS = "REPLY_SETTINGS";
+	public static final String REPLY_SETTINGS_MODE = "REPLY_SETTINGS_MODE";
+	public static final String REPLY_SETTINGS_ALLOW_SMS = "REPLY_SETTINGS_ALLOW_SMS";
+	public static final String REPLY_SETTINGS_ALLOW_INTERNET = "REPLY_SETTINGS_ALLOW_INTERNET";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
