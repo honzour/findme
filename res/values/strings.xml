@@ -15,11 +15,13 @@
 
     <!-- Reply -->
     <string-array name="reply_mode">
-        <item>Reply requests</item>
-        <item>Ignore requests</item>
-        <item>Reply \"I don\'t know\"</item>
+        <item>Reply all requests</item>
+        <item>Ignore all requests</item>
+        <item>Reply \"I won\'t tell you\"</item>
     </string-array>
     
-    <string name="reply_mode_reply">If a query arrives by a push notification or SMS, program will repect folowing rules. By default it will turn on GPS, get your position and send it to an asking device by a push or SMS.</string>
+    <string name="reply_mode_reply_all">If a query arrives by a push notification or SMS, program will answer it. It will turn on GPS, get your position and send it to an asking device by a push or SMS. Evrybody will know where are you.</string>
+    <string name="reply_mode_do_not_reply">If a query arrives by a push notification or SMS, program will ignore it. Like if you uninstall the application.</string>
+    <string name="reply_mode_reply_secret">If a query arrives by a push notification or SMS, program will reply, that it will not send your position. Everyone may know that you have that application working but nobody will get you position.</string>
 
 </resources>

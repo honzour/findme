@@ -16,9 +16,14 @@
     
     <!-- Reply -->
     <string-array name="reply_mode">
-        <item>Odpovídej normálně</item>
-        <item>Neodpovídej nic</item>
-        <item>Odpovídej \"Nevím\"</item>
+        <item>Odpověz na každý dotaz</item>
+        <item>Neodpovídej na žádný dotaz</item>
+        <item>Odpověz \"Neřeknu\"</item>
     </string-array>
+
+    
+    <string name="reply_mode_reply_all">Pokud přijde dotaz prostřednictvím SMS nebo push notifikace, program odpoví. Spustí GPS, zjistí Vaši pozici a pošle ji prostřednictvím SMS nebo push notifikace. Každý se tak dozví, kde jste.</string>
+    <string name="reply_mode_do_not_reply">Pokud přijde dotaz prostřednictvím SMS nebo push notifikace, program to bude ignorovat. Přesně jako kdybyste si program odinstalovali.</string>
+    <string name="reply_mode_reply_secret">Pokud přijde dotaz prostřednictvím SMS nebo push notifikace, program odpoví, že neřekne. Každý se tak dozví, že máte nainstalovanou aplikaci, ale už ne, kde jste.</string>
     
 </resources>
