@@ -24,7 +24,7 @@
     <string name="reply_mode_do_not_reply">If a query arrives by a push notification or SMS, program will ignore it. Like if you uninstall the application.</string>
     <string name="reply_mode_reply_secret">If a query arrives by a push notification or SMS, program will reply, that it will not send your position. Everyone may know that you have that application working but nobody will get you position.</string>
     
-    <string name="allow_sms">Program can send SMS</string>
-    <string name="allow_internet">Program can use Internet connection</string>
+    <string name="allow_sms">Program can send SMS reply</string>
+    <string name="allow_internet">Program can use Internet connection for reply</string>
 
 </resources>
