@@ -28,5 +28,6 @@
     
     <string name="ask_sms">Zeptej se před odesláním SMS odpovědi</string>
     <string name="ask_internet">Zeptej se před odpovědí přes Internet</string>
+    <string name="ask_autoreply">Automaticky potvrď po jedné minutě</string>
     
 </resources>

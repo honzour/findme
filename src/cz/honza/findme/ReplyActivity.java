@@ -17,6 +17,7 @@ public class ReplyActivity extends Activity {
 	public static final String REPLY_SETTINGS_MODE = "REPLY_SETTINGS_MODE";
 	public static final String REPLY_SETTINGS_ASK_SMS = "REPLY_SETTINGS_ASK_SMS";
 	public static final String REPLY_SETTINGS_ASK_INTERNET = "REPLY_SETTINGS_ASK_INTERNET";
+	public static final String REPLY_SETTINGS_ASK_AUTOREPLY = "REPLY_SETTINGS_ASK_AUTOREPLY";
 	
 	public static final int REPLY_SETTINGS_MODE_REPLY_ALL = 0;
 	public static final int REPLY_SETTINGS_MODE_DO_NOT_REPLY = 1;
@@ -48,19 +49,20 @@ public class ReplyActivity extends Activity {
 				int res;
 				
 				if (item < 0 || item > 2)
-					item = 1;
+					item = REPLY_SETTINGS_MODE_REPLY_ALL;
 
 				switch (item)
 				{
-				case REPLY_SETTINGS_MODE_REPLY_ALL:
-					res = R.string.reply_mode_reply_all;
-					break;
+				
 				case REPLY_SETTINGS_MODE_REPLY_SECRET:
 					res = R.string.reply_mode_reply_secret;
 					break;
-				case REPLY_SETTINGS_MODE_DO_NOT_REPLY: // or default
-				default:
+				case REPLY_SETTINGS_MODE_DO_NOT_REPLY:
 					res = R.string.reply_mode_do_not_reply;
+					break;
+				case REPLY_SETTINGS_MODE_REPLY_ALL:  // or default
+				default:
+					res = R.string.reply_mode_reply_all;
 					break;
 				}
 				
@@ -77,36 +79,30 @@ public class ReplyActivity extends Activity {
 			}
         	
 		});
-        final int modeValue = prefs.getInt(REPLY_SETTINGS_MODE, REPLY_SETTINGS_MODE_DO_NOT_REPLY);
+        final int modeValue = prefs.getInt(REPLY_SETTINGS_MODE, REPLY_SETTINGS_MODE_REPLY_ALL);
         mode.setSelection(modeValue);
         
         
-        // Checkbox sms
-        
-        final CheckBox askSms = (CheckBox) findViewById(R.id.ak_sms);
-        askSms.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				SharedPreferences prefs = getSharedPreferences(PRORAM_SETTINGS, MODE_PRIVATE);
-				SharedPreferences.Editor e = prefs.edit();
-				e.putBoolean(REPLY_SETTINGS_ASK_SMS, isChecked);
-				e.commit();
-			}
-		});
-        askSms.setChecked(prefs.getBoolean(REPLY_SETTINGS_ASK_SMS, true));
-        
+        // Checkbox SMS
+        setChekbox(prefs, REPLY_SETTINGS_ASK_SMS, R.id.ask_sms, true);
         // Checkbox Internet
+        setChekbox(prefs, REPLY_SETTINGS_ASK_INTERNET, R.id.ask_internet, false);
+        // Checkbox autoreply
+        setChekbox(prefs, REPLY_SETTINGS_ASK_AUTOREPLY, R.id.ask_autoreply, true);
+    }
         
-        final CheckBox askInternet = (CheckBox) findViewById(R.id.ask_internet);
-        askInternet.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    
+    private void setChekbox(SharedPreferences prefs, final String key, int resource, boolean defaultValue) {
+    	final CheckBox cb = (CheckBox) findViewById(resource);
+        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				SharedPreferences prefs = getSharedPreferences(PRORAM_SETTINGS, MODE_PRIVATE);
 				SharedPreferences.Editor e = prefs.edit();
-				e.putBoolean(REPLY_SETTINGS_ASK_INTERNET, isChecked);
+				e.putBoolean(key, isChecked);
 				e.commit();
 			}
 		});
-        askInternet.setChecked(prefs.getBoolean(REPLY_SETTINGS_ASK_INTERNET, true));
+        cb.setChecked(prefs.getBoolean(key, defaultValue));
     }
 }
