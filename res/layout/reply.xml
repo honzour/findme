@@ -26,12 +26,12 @@
     		android:orientation="horizontal"
     	    >
     		<CheckBox 
-    		    android:id="@+id/allow_sms"
+    		    android:id="@+id/ak_sms"
     	    	android:layout_width="wrap_content"
     			android:layout_height="wrap_content" />
     		<TextView
     	    	android:textColor="@color/form_text"
-    	    	android:text="@string/allow_sms"
+    	    	android:text="@string/ask_sms"
     	    	android:layout_width="wrap_content"
     			android:layout_height="wrap_content"
     	    />
@@ -42,12 +42,12 @@
     		android:orientation="horizontal"
     	    >
     		<CheckBox 
-    		    android:id="@+id/allow_internet"
+    		    android:id="@+id/ask_internet"
     	    	android:layout_width="wrap_content"
     			android:layout_height="wrap_content" />
     		<TextView
     	    	android:textColor="@color/form_text"
-    	    	android:text="@string/allow_internet"
+    	    	android:text="@string/ask_internet"
     	    	android:layout_width="wrap_content"
     			android:layout_height="wrap_content"
     	    />
