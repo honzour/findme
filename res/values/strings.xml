@@ -28,8 +28,11 @@
     <string name="ask_internet">Ask before using Internet connection for a reply</string>
     <string name="ask_autoreply">Autoreply yes after 1 minute timeout</string>
     
-    <!-- Reply -->
+    <!-- Ask -->
     
     <string name="where_is_phone">Where is the phone with number</string>
+    <string name="common_phone_number">+420774123456</string>
+    <string name="push_query">Push query</string>
+    <string name="sms_query">SMS query</string>
 
 </resources>

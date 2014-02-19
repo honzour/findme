@@ -13,5 +13,29 @@
     		android:textColor="@color/form_text"
     		android:text="@string/where_is_phone"
     	    />
+    	<EditText
+    	    android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:hint="@string/common_phone_number"
+    	    />
+    	<LinearLayout
+    	    android:orientation="horizontal"
+    	    android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    	    >
+    	    <Button
+    	        android:layout_weight="1"
+    	        android:text="@string/sms_query"
+    	        android:layout_width="0px"
+    			android:layout_height="wrap_content"
+    	        />
+    	    <Button
+    	        android:layout_weight="1"
+    	        android:enabled="false"
+    	        android:text="@string/push_query"
+    	        android:layout_width="0px"
+    			android:layout_height="wrap_content"
+    	        />
+    	</LinearLayout>
 	</LinearLayout>
 </ScrollView>

@@ -30,8 +30,11 @@
     <string name="ask_internet">Zeptej se před odpovědí přes Internet</string>
     <string name="ask_autoreply">Automaticky potvrď po jedné minutě</string>
     
-    <!-- Reply -->
+    <!-- Ask -->
     
     <string name="where_is_phone">Kde je telefon číslo</string>
+    <string name="common_phone_number">+420774123456</string>
+    <string name="push_query">Push dotaz</string>
+    <string name="sms_query">SMS dotaz</string>
     
 </resources>
