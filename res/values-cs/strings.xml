@@ -30,4 +30,8 @@
     <string name="ask_internet">Zeptej se před odpovědí přes Internet</string>
     <string name="ask_autoreply">Automaticky potvrď po jedné minutě</string>
     
+    <!-- Reply -->
+    
+    <string name="where_is_phone">Kde je telefon číslo</string>
+    
 </resources>

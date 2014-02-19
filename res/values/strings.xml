@@ -27,5 +27,9 @@
     <string name="ask_sms">Ask before sending a SMS reply</string>
     <string name="ask_internet">Ask before using Internet connection for a reply</string>
     <string name="ask_autoreply">Autoreply yes after 1 minute timeout</string>
+    
+    <!-- Reply -->
+    
+    <string name="where_is_phone">Where is the phone with number</string>
 
 </resources>
