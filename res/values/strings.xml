@@ -3,7 +3,7 @@
 	<!-- Main Activity -->
     <string name="app_name">Find me</string>
     <string name="my_position">My Position</string>
-    <string name="ask_settings">Ask Settins</string>
+    <string name="ask_settings">Requests</string>
     <string name="reply_settings">Reply Setings</string>
     
     <!-- My Position -->
