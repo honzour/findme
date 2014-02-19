@@ -36,5 +36,6 @@
     <string name="common_phone_number">+420774123456</string>
     <string name="push_query">Push dotaz</string>
     <string name="sms_query">SMS dotaz</string>
+    <string name="attach_my_position">Pošli s dotazem i svou pozici</string>
     
 </resources>
