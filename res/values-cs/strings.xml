@@ -13,6 +13,7 @@
     <string name="latitude">šířka</string>
     <string name="altitude">výška</string>
     <string name="accuracy">přesnost</string>
+    <string name="gps_disabled">GPS není povolené</string>
     
     <!-- Reply -->
     <string-array name="reply_mode">
@@ -37,5 +38,6 @@
     <string name="push_query">Push dotaz</string>
     <string name="sms_query">SMS dotaz</string>
     <string name="attach_my_position">Pošli s dotazem i svou pozici</string>
+    <string name="gps_timeout">Nedaří se nalézt pozici přes GPS</string>
     
 </resources>

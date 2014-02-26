@@ -1,12 +1,14 @@
 package cz.honza.findme;
 
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.app.Activity;
+import android.content.Context;
 
 public class AskActivity extends Activity {
 
@@ -14,6 +16,12 @@ public class AskActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ask);
+        
+        LocationManager locManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+        {
+        	findViewById(R.id.ask_attach).setEnabled(false);
+        }
         
         final View askSms = findViewById(R.id.ask_sms);
         askSms.setOnClickListener(new View.OnClickListener() {
@@ -28,7 +36,7 @@ public class AskActivity extends Activity {
 						
 						@Override
 						public void onTimeout() {
-							Toast.makeText(FindMeApplication.sInstance, "timeout", Toast.LENGTH_LONG).show();
+							Toast.makeText(FindMeApplication.sInstance, R.string.gps_timeout, Toast.LENGTH_LONG).show();
 						}
 						
 						@Override
@@ -39,7 +47,7 @@ public class AskActivity extends Activity {
 						
 						@Override
 						public void onError(int errorCode) {
-								
+							Toast.makeText(FindMeApplication.sInstance, R.string.gps_disabled, Toast.LENGTH_LONG).show();	
 						}
 					});
 				}

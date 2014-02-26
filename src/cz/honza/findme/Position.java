@@ -61,6 +61,9 @@ public class Position {
 
 		@Override
 		public void onProviderDisabled(String provider) {
+			mCallback.onError(0);
+			mTimeoutHandler.removeCallbacksAndMessages(null);
+			mManager.removeUpdates(this);
 		}
 
 		@Override

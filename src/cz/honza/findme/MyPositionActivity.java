@@ -48,6 +48,13 @@ public class MyPositionActivity extends Activity {
         mAccuracy = (TextView) findViewById(R.id.main_accuracy);
         
         mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        
+        if (!mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+        {
+        	findMeButton.setEnabled(false);
+        	toast(getResources().getString(R.string.gps_disabled));
+        }
+        
 	    mlocListener = new LocationListener()
 	    {
 			@Override
@@ -68,18 +75,16 @@ public class MyPositionActivity extends Activity {
 
 			@Override
 			public void onProviderDisabled(String provider) {
-				toast("onProviderDisabled");
+				toast(getResources().getString(R.string.gps_disabled));
+				mlocManager.removeUpdates(mlocListener);
 			}
 
 			@Override
 			public void onProviderEnabled(String provider) {
-				toast("onProviderEnabled");
 			}
 
 			@Override
-			public void onStatusChanged(String provider, int status,
-					Bundle extras) {
-				toast("onStatusChanged");
+			public void onStatusChanged(String provider, int status, Bundle extras) {
 			}
 	    	
 	    };

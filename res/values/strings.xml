@@ -12,6 +12,7 @@
     <string name="latitude">latitude</string>
     <string name="altitude">altitude</string>
     <string name="accuracy">accuracy</string>
+    <string name="gps_disabled">GPS is disabled</string>
 
     <!-- Reply -->
     <string-array name="reply_mode">
@@ -35,5 +36,6 @@
     <string name="push_query">Push query</string>
     <string name="sms_query">SMS query</string>
     <string name="attach_my_position">Attach my position</string>
+    <string name="gps_timeout">GPS timeout</string>
 
 </resources>
