@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 import android.app.Activity;
 import android.content.Context;
 
@@ -36,18 +35,19 @@ public class AskActivity extends Activity {
 						
 						@Override
 						public void onTimeout() {
-							Toast.makeText(FindMeApplication.sInstance, R.string.gps_timeout, Toast.LENGTH_LONG).show();
+							Util.toast(R.string.gps_timeout);
 						}
 						
 						@Override
 						public void onMyPositionFound(Location location) {
 							String url = "findme:ask?v=1&n=" + number.getText() + "&p=" + location.toString();
-							Toast.makeText(FindMeApplication.sInstance, url, Toast.LENGTH_LONG).show();
+							Util.toast(url);
 						}
 						
 						@Override
 						public void onError(int errorCode) {
-							Toast.makeText(FindMeApplication.sInstance, R.string.gps_disabled, Toast.LENGTH_LONG).show();	
+							Util.toast(R.string.gps_disabled);
+
 						}
 					});
 				}
@@ -55,7 +55,7 @@ public class AskActivity extends Activity {
 				{
 					String url = "findme:ask?v=1&n=" + number.getText();
 				
-					Toast.makeText(AskActivity.this, url, Toast.LENGTH_LONG).show();
+					Util.toast(url);
 				}
 				finish();
 			}

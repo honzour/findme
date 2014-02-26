@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -29,10 +28,6 @@ public class MyPositionActivity extends Activity {
 	protected static final String LAST_POSITION_PREFS = "LAST_POSITION_PREFS";
 	protected static final String LAST_POSITION_LONG = "LAST_POSITION_LONG";
 	protected static final String LAST_POSITION_LAT = "LAST_POSITION_LAT";
-	
-	protected void toast(String text) {
-		Toast.makeText(this, text, Toast.LENGTH_LONG).show();
-	}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +47,7 @@ public class MyPositionActivity extends Activity {
         if (!mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
         {
         	findMeButton.setEnabled(false);
-        	toast(getResources().getString(R.string.gps_disabled));
+        	Util.toast(R.string.gps_disabled);
         }
         
 	    mlocListener = new LocationListener()
@@ -75,7 +70,7 @@ public class MyPositionActivity extends Activity {
 
 			@Override
 			public void onProviderDisabled(String provider) {
-				toast(getResources().getString(R.string.gps_disabled));
+				Util.toast(R.string.gps_disabled);
 				mlocManager.removeUpdates(mlocListener);
 			}
 
