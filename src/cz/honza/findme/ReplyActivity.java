@@ -13,21 +13,13 @@ import android.content.SharedPreferences;
 
 public class ReplyActivity extends Activity {
 	
-	public static final String PRORAM_SETTINGS = "REPLY_SETTINGS";
-	public static final String REPLY_SETTINGS_MODE = "REPLY_SETTINGS_MODE";
-	public static final String REPLY_SETTINGS_ASK_SMS = "REPLY_SETTINGS_ASK_SMS";
-	public static final String REPLY_SETTINGS_ASK_INTERNET = "REPLY_SETTINGS_ASK_INTERNET";
-	public static final String REPLY_SETTINGS_ASK_AUTOREPLY = "REPLY_SETTINGS_ASK_AUTOREPLY";
-	
-	public static final int REPLY_SETTINGS_MODE_REPLY_ALL = 0;
-	public static final int REPLY_SETTINGS_MODE_DO_NOT_REPLY = 1;
-	public static final int REPLY_SETTINGS_MODE_REPLY_SECRET = 2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reply);
-        SharedPreferences prefs = getSharedPreferences(PRORAM_SETTINGS, MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(Preferences.PRORAM_SETTINGS, MODE_PRIVATE);
     
         // Spinner mode
         
@@ -49,27 +41,27 @@ public class ReplyActivity extends Activity {
 				int res;
 				
 				if (item < 0 || item > 2)
-					item = REPLY_SETTINGS_MODE_REPLY_ALL;
+					item = Preferences.REPLY_SETTINGS_MODE_REPLY_ALL;
 
 				switch (item)
 				{
 				
-				case REPLY_SETTINGS_MODE_REPLY_SECRET:
+				case Preferences.REPLY_SETTINGS_MODE_REPLY_SECRET:
 					res = R.string.reply_mode_reply_secret;
 					break;
-				case REPLY_SETTINGS_MODE_DO_NOT_REPLY:
+				case Preferences.REPLY_SETTINGS_MODE_DO_NOT_REPLY:
 					res = R.string.reply_mode_do_not_reply;
 					break;
-				case REPLY_SETTINGS_MODE_REPLY_ALL:  // or default
+				case Preferences.REPLY_SETTINGS_MODE_REPLY_ALL:  // or default
 				default:
 					res = R.string.reply_mode_reply_all;
 					break;
 				}
 				
 				modeInfo.setText(res);
-				SharedPreferences prefs = getSharedPreferences(PRORAM_SETTINGS, MODE_PRIVATE);
+				SharedPreferences prefs = getSharedPreferences(Preferences.PRORAM_SETTINGS, MODE_PRIVATE);
 				SharedPreferences.Editor e = prefs.edit();
-				e.putInt(REPLY_SETTINGS_MODE, item);
+				e.putInt(Preferences.REPLY_SETTINGS_MODE, item);
 				e.commit();
 			}
 
@@ -79,16 +71,16 @@ public class ReplyActivity extends Activity {
 			}
         	
 		});
-        final int modeValue = prefs.getInt(REPLY_SETTINGS_MODE, REPLY_SETTINGS_MODE_REPLY_ALL);
+        final int modeValue = prefs.getInt(Preferences.REPLY_SETTINGS_MODE, Preferences.REPLY_SETTINGS_MODE_REPLY_ALL);
         mode.setSelection(modeValue);
         
         
         // Checkbox SMS
-        setChekbox(prefs, REPLY_SETTINGS_ASK_SMS, R.id.ask_sms, true);
+        setChekbox(prefs, Preferences.REPLY_SETTINGS_ASK_SMS, R.id.ask_sms, true);
         // Checkbox Internet
-        setChekbox(prefs, REPLY_SETTINGS_ASK_INTERNET, R.id.ask_internet, false);
+        setChekbox(prefs, Preferences.REPLY_SETTINGS_ASK_INTERNET, R.id.ask_internet, false);
         // Checkbox autoreply
-        setChekbox(prefs, REPLY_SETTINGS_ASK_AUTOREPLY, R.id.ask_autoreply, true);
+        setChekbox(prefs, Preferences.REPLY_SETTINGS_ASK_AUTOREPLY, R.id.ask_autoreply, true);
     }
         
     
@@ -97,7 +89,7 @@ public class ReplyActivity extends Activity {
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				SharedPreferences prefs = getSharedPreferences(PRORAM_SETTINGS, MODE_PRIVATE);
+				SharedPreferences prefs = getSharedPreferences(Preferences.PRORAM_SETTINGS, MODE_PRIVATE);
 				SharedPreferences.Editor e = prefs.edit();
 				e.putBoolean(key, isChecked);
 				e.commit();

@@ -12,6 +12,12 @@ public class FindMeUrl {
 	
 	private static final int PROTOCOL_VERSION = 1;
 	
+	
+	public static String urlFromSms(String sms)
+	{
+		return null;
+	}
+	
 	private static String urlEncode(String param)
 	{
 		// TODO

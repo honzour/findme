@@ -3,35 +3,45 @@ package cz.honza.findme;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
-import android.util.Log;
 
 public class SMSReceiver extends BroadcastReceiver {
 
+	boolean handleSMS(String from, String message)
+	{
+		String url = FindMeUrl.urlFromSms(message);
+		if (url == null)
+			return false;
+		else
+			return true;
+	}
+	
 	@Override
 	public void onReceive(Context content, Intent intent) {
+		
+		SharedPreferences prefs = FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, Context.MODE_PRIVATE);
+		int mode = prefs.getInt(Preferences.REPLY_SETTINGS_MODE, Preferences.REPLY_SETTINGS_MODE_REPLY_ALL);
+		
+		if (mode == Preferences.REPLY_SETTINGS_MODE_DO_NOT_REPLY)
+			return;
+		
 		Bundle extras = intent.getExtras();
 
 	    Object[] pdus = (Object[])extras.get("pdus");
+	    boolean allOur = true;
 	    for (Object pdu: pdus)
 	    {
-	      SmsMessage msg = SmsMessage.createFromPdu((byte[])pdu);
+	      final SmsMessage msg = SmsMessage.createFromPdu((byte[])pdu);
 
-	      String origin = msg.getOriginatingAddress();
-	      String body = msg.getMessageBody();
-
-	      Log.e("Prisla SMS", origin + " " + body);
-	      
-	      /*
-	      // Parse the SMS body
-	      if (isMySpecialSMS)
-	      {
-	        // Stop it being passed to the main Messaging inbox
-	        abortBroadcast();
-	      }
-	      */
+	      final String message = msg.getMessageBody();
+	      String from = msg.getOriginatingAddress();
+	      allOur = handleSMS(from, message) && allOur; 
 	    }
+	    
+	  /*  if (allOur)
+	    	abortBroadcast(); - for sure */
 	}
 
 }
