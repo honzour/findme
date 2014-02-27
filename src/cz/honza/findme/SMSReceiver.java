@@ -13,9 +13,15 @@ public class SMSReceiver extends BroadcastReceiver {
 	{
 		String url = FindMeUrl.urlFromSms(message);
 		if (url == null)
+		{
+			Util.toast("SMS is not our");
 			return false;
+		}
 		else
+		{
+			Util.toast("our SMS" + url);
 			return true;
+		}
 	}
 	
 	@Override

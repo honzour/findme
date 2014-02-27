@@ -12,10 +12,27 @@ public class FindMeUrl {
 	
 	private static final int PROTOCOL_VERSION = 1;
 	
+	public static boolean isValidUrl(String url)
+	{
+		return true;
+	}
 	
 	public static String urlFromSms(String sms)
 	{
+		if (!sms.contains(URL_START))
+			return null;
+		String[] urls = sms.split(URL_START);
+		for (int i = 1; i < urls.length; i++)
+		{
+			String url = URL_START + urls[i].split(" ")[0];
+			
+			if (isValidUrl(url))
+			{
+				return url;
+			}
+		}
 		return null;
+		
 	}
 	
 	private static String urlEncode(String param)
