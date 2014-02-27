@@ -20,8 +20,8 @@ public class FindMeUrl {
 		{
 			Uri u = Uri.parse(url);
 			String host = u.getHost();
-			StringBuffer v = new StringBuffer().append(CHAR_VERSION);
-			int version = Integer.valueOf(u.getQueryParameter(v.toString()));
+			
+			int version = Integer.valueOf(u.getQueryParameter(String.valueOf(CHAR_VERSION)));
 			
 			if ((host.equals(ACTION_ASK) || host.equals(ACTION_REPLY)) && version == 1)
 			{
@@ -54,9 +54,55 @@ public class FindMeUrl {
 		
 	}
 	
+	public static void handleReply(String from, double lon, double lat)
+	{
+		// TODO
+	}
+	
+	
 	public static void handleUri(String from, Uri uri)
 	{
-		Util.toast("handleUri(" + from + ", " + uri + "");
+		String host = uri.getHost();
+		if (host.equals(ACTION_ASK))
+		{
+			String lon = uri.getQueryParameter(String.valueOf(CHAR_LONGITUDE));
+			String lat = uri.getQueryParameter(String.valueOf(CHAR_LATITUDE));
+			if (lon != null && lat != null)
+			{
+				try
+				{
+					double lond = Double.valueOf(lon);
+					double latd = Double.valueOf(lat);
+					handleReply(from, lond, latd);
+				}
+				catch (NumberFormatException e)
+				{
+					// ignore
+				}
+			}
+			Position.findMyPosition(300, new Position.Callback() {
+				
+				@Override
+				public void onTimeout() {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onMyPositionFound(Location location) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onError(int errorCode) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+			return;
+		}
+		//Util.toast("handleUri(" + from + ", " + uri + "");
 	}
 	
 	private static String urlEncode(String param)
