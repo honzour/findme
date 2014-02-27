@@ -37,5 +37,9 @@
     <string name="sms_query">SMS query</string>
     <string name="attach_my_position">Attach my position</string>
     <string name="gps_timeout">GPS timeout</string>
+    
+    <!-- Show Position -->
+    <string name="show_position">Show Position</string>
+    <string name="open_on_map">Open on Map</string>
 
 </resources>

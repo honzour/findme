@@ -40,4 +40,9 @@
     <string name="attach_my_position">Pošli s dotazem i svou pozici</string>
     <string name="gps_timeout">Nedaří se nalézt pozici přes GPS</string>
     
+    <!-- Show Position -->
+    
+    <string name="show_position">Zobraz pozici</string>
+    <string name="open_on_map">Otevři na mapě</string>
+    
 </resources>

@@ -1,5 +1,6 @@
 package cz.honza.findme;
 
+import android.content.Intent;
 import android.location.Location;
 import android.net.Uri;
 
@@ -56,7 +57,11 @@ public class FindMeUrl {
 	
 	public static void handleReply(String from, double lon, double lat)
 	{
-		// TODO
+		Intent intent = new Intent(FindMeApplication.sInstance, ShowPositionActivity.class);
+		intent.putExtra(ShowPositionActivity.EXTRA_LON, lon);
+		intent.putExtra(ShowPositionActivity.EXTRA_LAT, lat);
+		intent.putExtra(ShowPositionActivity.EXTRA_FROM, from);
+		FindMeApplication.sInstance.startActivity(intent);
 	}
 	
 	

@@ -44,6 +44,10 @@
             android:name="cz.honza.findme.MyPositionActivity"
             android:label="@string/my_position" >
         </activity>
+        <activity
+            android:name="cz.honza.findme.ShowPositionActivity"
+            android:label="@string/show_position" >
+        </activity>
     </application>
 
 </manifest>
