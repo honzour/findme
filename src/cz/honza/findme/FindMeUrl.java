@@ -8,7 +8,7 @@ import android.location.Location;
 import android.net.Uri;
 
 public class FindMeUrl {
-	private static final String URL_START = "findme:";
+	private static final String URL_START = "findme://";
 	
 	private static final String ACTION_ASK = "ask";
 	private static final String ACTION_REPLY = "reply";
