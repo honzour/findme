@@ -1,9 +1,5 @@
 package cz.honza.findme;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-
 import android.location.Location;
 import android.net.Uri;
 
