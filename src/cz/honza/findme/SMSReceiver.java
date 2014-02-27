@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 
@@ -11,15 +12,14 @@ public class SMSReceiver extends BroadcastReceiver {
 
 	boolean handleSMS(String from, String message)
 	{
-		String url = FindMeUrl.urlFromSms(message);
-		if (url == null)
+		Uri uri = FindMeUrl.uriFromSms(message);
+		if (uri == null)
 		{
-			Util.toast("SMS is not our");
 			return false;
 		}
 		else
 		{
-			Util.toast("our SMS" + url);
+			FindMeUrl.handleUri(from, uri);
 			return true;
 		}
 	}
@@ -46,8 +46,8 @@ public class SMSReceiver extends BroadcastReceiver {
 	      allOur = handleSMS(from, message) && allOur; 
 	    }
 	    
-	  /*  if (allOur)
-	    	abortBroadcast(); - for sure */
+	    if (allOur)
+	    	abortBroadcast();
 	}
 
 }

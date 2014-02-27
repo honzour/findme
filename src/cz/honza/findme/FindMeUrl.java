@@ -1,23 +1,45 @@
 package cz.honza.findme;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import android.location.Location;
+import android.net.Uri;
 
 public class FindMeUrl {
 	private static final String URL_START = "findme:";
 	
 	private static final String ACTION_ASK = "ask";
+	private static final String ACTION_REPLY = "reply";
 	private static final char CHAR_VERSION = 'v';
 	private static final char CHAR_LONGITUDE = 'o';
 	private static final char CHAR_LATITUDE = 'a';
 	
 	private static final int PROTOCOL_VERSION = 1;
 	
-	public static boolean isValidUrl(String url)
+	public static Uri getValidUri(String url)
 	{
-		return true;
+		try
+		{
+			Uri u = Uri.parse(url);
+			String host = u.getHost();
+			StringBuffer v = new StringBuffer().append(CHAR_VERSION);
+			int version = Integer.valueOf(u.getQueryParameter(v.toString()));
+			
+			if ((host.equals(ACTION_ASK) || host.equals(ACTION_REPLY)) && version == 1)
+			{
+				return u;
+			}
+			
+		} catch(Exception e)
+		{
+			return null;
+		}
+		return null;
 	}
 	
-	public static String urlFromSms(String sms)
+	public static Uri uriFromSms(String sms)
 	{
 		if (!sms.contains(URL_START))
 			return null;
@@ -26,13 +48,19 @@ public class FindMeUrl {
 		{
 			String url = URL_START + urls[i].split(" ")[0];
 			
-			if (isValidUrl(url))
+			Uri u = getValidUri(url);
+			if (u != null)
 			{
-				return url;
+				return u;
 			}
 		}
 		return null;
 		
+	}
+	
+	public static void handleUri(String from, Uri uri)
+	{
+		Util.toast("handleUri(" + from + ", " + uri + "");
 	}
 	
 	private static String urlEncode(String param)
