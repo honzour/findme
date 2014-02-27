@@ -11,6 +11,33 @@ import android.content.Context;
 
 public class AskActivity extends Activity {
 
+	private static class SendCallback implements Position.Callback
+	{
+		String mNumber;
+		
+		public SendCallback(String number)
+		{
+			mNumber = number;
+		}
+		
+		@Override
+		public void onTimeout() {
+			Util.toast(R.string.gps_timeout);
+		}
+		
+		@Override
+		public void onMyPositionFound(Location location) {
+			String url = FindMeUrl.createAskUrl(true, location);
+			readyToSendSms(url, mNumber);
+		}
+		
+		@Override
+		public void onError(int errorCode) {
+			Util.toast(R.string.gps_disabled);
+
+		}
+	}
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,36 +56,24 @@ public class AskActivity extends Activity {
 				final EditText number = (EditText) findViewById(R.id.ask_number);
 				final CheckBox attach = (CheckBox) findViewById(R.id.ask_attach);
 				
+				String numberValue = number.getText().toString();
+				
 				if (attach.isChecked())
 				{
-					Position.findMyPosition(60, new Position.Callback() {
-						
-						@Override
-						public void onTimeout() {
-							Util.toast(R.string.gps_timeout);
-						}
-						
-						@Override
-						public void onMyPositionFound(Location location) {
-							String url = "findme:ask?v=1&n=" + number.getText() + "&p=" + location.toString();
-							Util.toast(url);
-						}
-						
-						@Override
-						public void onError(int errorCode) {
-							Util.toast(R.string.gps_disabled);
-
-						}
-					});
+					Position.findMyPosition(60, new SendCallback(numberValue));
 				}
 				else
 				{
-					String url = "findme:ask?v=1&n=" + number.getText();
-				
-					Util.toast(url);
+					String url = FindMeUrl.createAskUrl(true, null);
+					readyToSendSms(url, number.getText().toString());
 				}
 				finish();
 			}
 		});
+    }
+    
+    private static void readyToSendSms(String url, String number)
+    {
+    	Util.toast("Send SMS to " + number + " " + url);
     }
 }
