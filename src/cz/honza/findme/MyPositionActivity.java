@@ -1,5 +1,6 @@
 package cz.honza.findme;
 
+import java.util.Calendar;
 import java.util.Locale;
 
 import android.location.Location;
@@ -112,6 +113,18 @@ public class MyPositionActivity extends Activity {
 			    	
 			    String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, lon);
 			    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+			    
+			    /*
+			     just for testing
+			    /////////////////
+			    intent = new Intent(MyPositionActivity.this, ShowPositionActivity.class);
+				intent.putExtra(ShowPositionActivity.EXTRA_CAPTION, "Přišla pozice");
+				intent.putExtra(ShowPositionActivity.EXTRA_LON, lon);
+				intent.putExtra(ShowPositionActivity.EXTRA_LAT, lat);
+				intent.putExtra(ShowPositionActivity.EXTRA_NUMBER, "+420774556087");
+				intent.putExtra(ShowPositionActivity.EXTRA_TIME, Calendar.getInstance());
+			    //////////////////
+			    */
 			    MyPositionActivity.this.startActivity(intent);
 			}
 		});
