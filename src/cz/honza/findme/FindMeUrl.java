@@ -5,6 +5,7 @@ import java.util.Calendar;
 import android.content.Intent;
 import android.location.Location;
 import android.net.Uri;
+import android.telephony.SmsManager;
 
 public class FindMeUrl {
 	private static final String URL_START = "findme://";
@@ -74,7 +75,7 @@ public class FindMeUrl {
 		FindMeApplication.sInstance.startActivity(intent);
 	}
 	
-	protected static void tryToHandlePosition(String from, Uri uri)
+	protected static void tryToHandlePosition(String from, Uri uri, Runnable onError)
 	{
 		String host = uri.getHost();
 		String lon = uri.getQueryParameter(String.valueOf(CHAR_LONGITUDE));
@@ -86,38 +87,67 @@ public class FindMeUrl {
 				double lond = Double.valueOf(lon);
 				double latd = Double.valueOf(lat);
 				handleIncomingPosition(host, from, lond, latd);
+				return;
 			}
 			catch (NumberFormatException e)
 			{
 				// ignore
 			}
 		}
+		if (onError != null)
+		{
+			// TODO
+		}
+	}
+
+	protected static void sendSMS(String number, String message)
+	{
+		SmsManager manager = SmsManager.getDefault();
+		manager.sendTextMessage(number, null, message, null, null);
 	}
 	
-	public static void handleUri(String from, Uri uri)
+	public static String createReplyUrl(boolean sms, Location myLocation)
+	{
+		StringBuffer sb = new StringBuffer(URL_START);
+		sb.append(ACTION_REPLY);
+		addParam(sb, true, CHAR_VERSION, String.valueOf(PROTOCOL_VERSION));
+		if (myLocation != null)
+		{
+			addParam(sb, true, CHAR_LONGITUDE, String.valueOf(myLocation.getLongitude()));
+			addParam(sb, true, CHAR_LATITUDE, String.valueOf(myLocation.getLatitude()));
+		}
+		if (sms)
+			sb.append(' ');
+		return sb.toString();
+	}
+   
+	protected static void sendReply(String to, Location location)
+	{
+		String message = createReplyUrl(true, location);
+		sendSMS(to, message);
+	}
+	
+	public static void handleUri(final String from, Uri uri)
 	{
 		String host = uri.getHost();
 		if (host.equals(ACTION_ASK))
 		{
-			tryToHandlePosition(from, uri);
+			tryToHandlePosition(from, uri, null);
 			Position.findMyPosition(300, new Position.Callback() {
 				
 				@Override
 				public void onTimeout() {
-					// TODO Auto-generated method stub
-					
+					sendReply(from, null);					
 				}
 				
 				@Override
 				public void onMyPositionFound(Location location) {
-					// TODO Auto-generated method stub
-					
+					sendReply(from, location);
 				}
 				
 				@Override
 				public void onError(int errorCode) {
-					// TODO Auto-generated method stub
-					
+					sendReply(from, null);
 				}
 			});
 			return;
@@ -125,7 +155,12 @@ public class FindMeUrl {
 		
 		if (host.equals(ACTION_REPLY))
 		{
-			tryToHandlePosition(from, uri);
+			tryToHandlePosition(from, uri, new Runnable() {
+				@Override
+				public void run() {
+					Util.toast(R.string.reply_without_location);					
+				}
+			});
 			return;
 		}
 	

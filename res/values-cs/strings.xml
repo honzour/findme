@@ -50,5 +50,6 @@
     <string name="incoming_position">Přišla pozice</string>
     <string name="incoming_position_ask">Přišla pozice - součást dotazu</string>
     <string name="incoming_position_reply">Přišla pozice - odpověď</string>
+    <string name="reply_without_location">Přišla odpověď bez pozice</string>
     
 </resources>

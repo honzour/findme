@@ -60,7 +60,7 @@ public class AskActivity extends Activity {
 				
 				if (attach.isChecked())
 				{
-					Position.findMyPosition(60, new SendCallback(numberValue));
+					Position.findMyPosition(300, new SendCallback(numberValue));
 				}
 				else
 				{
@@ -74,6 +74,6 @@ public class AskActivity extends Activity {
     
     private static void readyToSendSms(String url, String number)
     {
-    	Util.toast("Send SMS to " + number + " " + url);
+    	FindMeUrl.sendSMS(number, url);
     }
 }

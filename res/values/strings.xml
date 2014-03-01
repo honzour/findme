@@ -48,5 +48,6 @@
     <string name="incoming_position">Incoming location</string>
     <string name="incoming_position_ask">Incoming location - part of query</string>
     <string name="incoming_position_reply">Incoming location - reply</string>
+    <string name="reply_without_location">I have got a reply without location</string>
 
 </resources>
