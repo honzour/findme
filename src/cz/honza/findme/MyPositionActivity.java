@@ -120,7 +120,7 @@ public class MyPositionActivity extends Activity {
 				intent.putExtra(ShowPositionActivity.EXTRA_CAPTION, "Přišla pozice");
 				intent.putExtra(ShowPositionActivity.EXTRA_LON, lon);
 				intent.putExtra(ShowPositionActivity.EXTRA_LAT, lat);
-				intent.putExtra(ShowPositionActivity.EXTRA_NUMBER, "+420774556087");
+				intent.putExtra(ShowPositionActivity.EXTRA_NUMBER, "+420123456789");
 				intent.putExtra(ShowPositionActivity.EXTRA_TIME, Calendar.getInstance());
 			    //////////////////
 			    */
