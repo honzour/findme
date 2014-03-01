@@ -47,5 +47,8 @@
     <string name="time">čas</string>
     <string name="number">číslo</string>
     <string name="time_format">d.M.yyyy H:mm:ss</string>
+    <string name="incoming_position">Přišla pozice</string>
+    <string name="incoming_position_ask">Přišla pozice - součást dotazu</string>
+    <string name="incoming_position_reply">Přišla pozice - odpověď</string>
     
 </resources>

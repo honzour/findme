@@ -57,14 +57,20 @@ public class FindMeUrl {
 		
 	}
 	
-	public static void handleReply(String from, double lon, double lat)
+	public static void handleIncomingPosition(String action, String from, double lon, double lat)
 	{
+		int actionResource = R.string.incoming_position;
+		if (action.equals(ACTION_ASK))
+			actionResource = R.string.incoming_position_ask;
+		if (action.equals(ACTION_REPLY))
+			actionResource = R.string.incoming_position_reply;
 		Intent intent = new Intent(FindMeApplication.sInstance, ShowPositionActivity.class);
-		intent.putExtra(ShowPositionActivity.EXTRA_CAPTION, "");
+		intent.putExtra(ShowPositionActivity.EXTRA_CAPTION, FindMeApplication.sInstance.getResources().getString(actionResource));
 		intent.putExtra(ShowPositionActivity.EXTRA_LON, lon);
 		intent.putExtra(ShowPositionActivity.EXTRA_LAT, lat);
 		intent.putExtra(ShowPositionActivity.EXTRA_NUMBER, from);
 		intent.putExtra(ShowPositionActivity.EXTRA_TIME, Calendar.getInstance());
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		FindMeApplication.sInstance.startActivity(intent);
 	}
 	
@@ -82,7 +88,7 @@ public class FindMeUrl {
 				{
 					double lond = Double.valueOf(lon);
 					double latd = Double.valueOf(lat);
-					handleReply(from, lond, latd);
+					handleIncomingPosition(host, from, lond, latd);
 				}
 				catch (NumberFormatException e)
 				{

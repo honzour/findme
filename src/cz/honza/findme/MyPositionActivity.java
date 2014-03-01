@@ -1,6 +1,5 @@
 package cz.honza.findme;
 
-import java.util.Calendar;
 import java.util.Locale;
 
 import android.location.Location;
