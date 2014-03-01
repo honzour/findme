@@ -44,5 +44,8 @@
     
     <string name="show_position">Zobraz pozici</string>
     <string name="open_on_map">Otevři na mapě</string>
+    <string name="time">čas</string>
+    <string name="number">číslo</string>
+    <string name="time_format">d.M.yyyy H:mm:ss</string>
     
 </resources>

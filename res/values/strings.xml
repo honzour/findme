@@ -41,5 +41,8 @@
     <!-- Show Position -->
     <string name="show_position">Show Position</string>
     <string name="open_on_map">Open on Map</string>
+    <string name="time">Time</string>
+    <string name="number">Number</string>
+    <string name="time_format">EEE, MMM d, yyyy hh:mm:ss aaa</string>
 
 </resources>
