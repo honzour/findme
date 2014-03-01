@@ -74,27 +74,32 @@ public class FindMeUrl {
 		FindMeApplication.sInstance.startActivity(intent);
 	}
 	
+	protected static void tryToHandlePosition(String from, Uri uri)
+	{
+		String host = uri.getHost();
+		String lon = uri.getQueryParameter(String.valueOf(CHAR_LONGITUDE));
+		String lat = uri.getQueryParameter(String.valueOf(CHAR_LATITUDE));
+		if (lon != null && lat != null)
+		{
+			try
+			{
+				double lond = Double.valueOf(lon);
+				double latd = Double.valueOf(lat);
+				handleIncomingPosition(host, from, lond, latd);
+			}
+			catch (NumberFormatException e)
+			{
+				// ignore
+			}
+		}
+	}
 	
 	public static void handleUri(String from, Uri uri)
 	{
 		String host = uri.getHost();
 		if (host.equals(ACTION_ASK))
 		{
-			String lon = uri.getQueryParameter(String.valueOf(CHAR_LONGITUDE));
-			String lat = uri.getQueryParameter(String.valueOf(CHAR_LATITUDE));
-			if (lon != null && lat != null)
-			{
-				try
-				{
-					double lond = Double.valueOf(lon);
-					double latd = Double.valueOf(lat);
-					handleIncomingPosition(host, from, lond, latd);
-				}
-				catch (NumberFormatException e)
-				{
-					// ignore
-				}
-			}
+			tryToHandlePosition(from, uri);
 			Position.findMyPosition(300, new Position.Callback() {
 				
 				@Override
@@ -117,7 +122,13 @@ public class FindMeUrl {
 			});
 			return;
 		}
-		//Util.toast("handleUri(" + from + ", " + uri + "");
+		
+		if (host.equals(ACTION_REPLY))
+		{
+			tryToHandlePosition(from, uri);
+			return;
+		}
+	
 	}
 	
 	private static String urlEncode(String param)
