@@ -1,5 +1,6 @@
 package cz.honza.findme;
 
+import android.telephony.SmsManager;
 import android.widget.Toast;
 
 public class Util {
@@ -11,5 +12,11 @@ public class Util {
 	public static void toast(int res)
 	{
 		Toast.makeText(FindMeApplication.sInstance, res, Toast.LENGTH_LONG).show();
+	}
+	
+	protected static void sendSMS(String number, String message)
+	{
+		SmsManager manager = SmsManager.getDefault();
+		manager.sendTextMessage(number, null, message, null, null);
 	}
 }

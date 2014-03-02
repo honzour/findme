@@ -1,20 +1,16 @@
 package cz.honza.findme;
 
-import java.util.Calendar;
-
-import android.content.Intent;
 import android.location.Location;
 import android.net.Uri;
-import android.telephony.SmsManager;
 
 public class FindMeUrl {
 	private static final String URL_START = "findme://";
 	
-	private static final String ACTION_ASK = "ask";
-	private static final String ACTION_REPLY = "reply";
-	private static final char CHAR_VERSION = 'v';
-	private static final char CHAR_LONGITUDE = 'o';
-	private static final char CHAR_LATITUDE = 'a';
+	public static final String ACTION_ASK = "ask";
+	public static final String ACTION_REPLY = "reply";
+	public static final char CHAR_VERSION = 'v';
+	public static final char CHAR_LONGITUDE = 'o';
+	public static final char CHAR_LATITUDE = 'a';
 	
 	private static final int PROTOCOL_VERSION = 1;
 	
@@ -55,55 +51,20 @@ public class FindMeUrl {
 			}
 		}
 		return null;
+	}
 		
+	private static String urlEncode(String param)
+	{
+		// TODO
+		return param;
 	}
 	
-	public static void handleIncomingPosition(String action, String from, double lon, double lat)
+	private static void addParam(StringBuffer sb, boolean first, char param, String value)
 	{
-		int actionResource = R.string.incoming_position;
-		if (action.equals(ACTION_ASK))
-			actionResource = R.string.incoming_position_ask;
-		if (action.equals(ACTION_REPLY))
-			actionResource = R.string.incoming_position_reply;
-		Intent intent = new Intent(FindMeApplication.sInstance, ShowPositionActivity.class);
-		intent.putExtra(ShowPositionActivity.EXTRA_CAPTION, FindMeApplication.sInstance.getResources().getString(actionResource));
-		intent.putExtra(ShowPositionActivity.EXTRA_LON, lon);
-		intent.putExtra(ShowPositionActivity.EXTRA_LAT, lat);
-		intent.putExtra(ShowPositionActivity.EXTRA_NUMBER, from);
-		intent.putExtra(ShowPositionActivity.EXTRA_TIME, Calendar.getInstance());
-		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		FindMeApplication.sInstance.startActivity(intent);
-	}
-	
-	protected static void tryToHandlePosition(String from, Uri uri, Runnable onError)
-	{
-		String host = uri.getHost();
-		String lon = uri.getQueryParameter(String.valueOf(CHAR_LONGITUDE));
-		String lat = uri.getQueryParameter(String.valueOf(CHAR_LATITUDE));
-		if (lon != null && lat != null)
-		{
-			try
-			{
-				double lond = Double.valueOf(lon);
-				double latd = Double.valueOf(lat);
-				handleIncomingPosition(host, from, lond, latd);
-				return;
-			}
-			catch (NumberFormatException e)
-			{
-				// ignore
-			}
-		}
-		if (onError != null)
-		{
-			// TODO
-		}
-	}
-
-	protected static void sendSMS(String number, String message)
-	{
-		SmsManager manager = SmsManager.getDefault();
-		manager.sendTextMessage(number, null, message, null, null);
+		sb.append(first ? '?' : '&');
+		sb.append(param);
+		sb.append('=');
+		sb.append(urlEncode(value));
 	}
 	
 	public static String createReplyUrl(boolean sms, Location myLocation)
@@ -119,65 +80,6 @@ public class FindMeUrl {
 		if (sms)
 			sb.append(' ');
 		return sb.toString();
-	}
-   
-	protected static void sendReply(String to, Location location)
-	{
-		String message = createReplyUrl(true, location);
-		sendSMS(to, message);
-	}
-	
-	public static void handleUri(final String from, Uri uri)
-	{
-		String host = uri.getHost();
-		if (host.equals(ACTION_ASK))
-		{
-			tryToHandlePosition(from, uri, null);
-			Position.findMyPosition(300, new Position.Callback() {
-				
-				@Override
-				public void onTimeout() {
-					sendReply(from, null);					
-				}
-				
-				@Override
-				public void onMyPositionFound(Location location) {
-					sendReply(from, location);
-				}
-				
-				@Override
-				public void onError(int errorCode) {
-					sendReply(from, null);
-				}
-			});
-			return;
-		}
-		
-		if (host.equals(ACTION_REPLY))
-		{
-			tryToHandlePosition(from, uri, new Runnable() {
-				@Override
-				public void run() {
-					Util.toast(R.string.reply_without_location);					
-				}
-			});
-			return;
-		}
-	
-	}
-	
-	private static String urlEncode(String param)
-	{
-		// TODO
-		return param;
-	}
-	
-	private static void addParam(StringBuffer sb, boolean first, char param, String value)
-	{
-		sb.append(first ? '?' : '&');
-		sb.append(param);
-		sb.append('=');
-		sb.append(urlEncode(value));
 	}
 	
 	public static String createAskUrl(boolean sms, Location myLocation)
