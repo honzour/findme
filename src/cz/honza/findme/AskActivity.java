@@ -74,6 +74,6 @@ public class AskActivity extends Activity {
     
     private static void readyToSendSms(String url, String number)
     {
-    	FindMeUrl.sendSMS(number, url);
+    	Util.sendSMS(number, url);
     }
 }

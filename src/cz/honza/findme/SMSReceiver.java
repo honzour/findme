@@ -19,7 +19,7 @@ public class SMSReceiver extends BroadcastReceiver {
 		}
 		else
 		{
-			FindMeUrl.handleUri(from, uri);
+			Handling.handleUri(from, uri);
 			return true;
 		}
 	}
