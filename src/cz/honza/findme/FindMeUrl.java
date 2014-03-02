@@ -74,8 +74,8 @@ public class FindMeUrl {
 		addParam(sb, true, CHAR_VERSION, String.valueOf(PROTOCOL_VERSION));
 		if (myLocation != null)
 		{
-			addParam(sb, true, CHAR_LONGITUDE, String.valueOf(myLocation.getLongitude()));
-			addParam(sb, true, CHAR_LATITUDE, String.valueOf(myLocation.getLatitude()));
+			addParam(sb, false, CHAR_LONGITUDE, String.valueOf(myLocation.getLongitude()));
+			addParam(sb, false, CHAR_LATITUDE, String.valueOf(myLocation.getLatitude()));
 		}
 		if (sms)
 			sb.append(' ');
