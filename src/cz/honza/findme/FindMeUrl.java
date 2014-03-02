@@ -67,10 +67,10 @@ public class FindMeUrl {
 		sb.append(urlEncode(value));
 	}
 	
-	public static String createReplyUrl(boolean sms, Location myLocation)
+	protected static String createBasicUrl(boolean sms, Location myLocation, String action)
 	{
 		StringBuffer sb = new StringBuffer(URL_START);
-		sb.append(ACTION_REPLY);
+		sb.append(action);
 		addParam(sb, true, CHAR_VERSION, String.valueOf(PROTOCOL_VERSION));
 		if (myLocation != null)
 		{
@@ -82,18 +82,13 @@ public class FindMeUrl {
 		return sb.toString();
 	}
 	
+	public static String createReplyUrl(boolean sms, Location myLocation)
+	{
+		return createBasicUrl(sms, myLocation, ACTION_REPLY);
+	}
+	
 	public static String createAskUrl(boolean sms, Location myLocation)
 	{
-		StringBuffer sb = new StringBuffer(URL_START);
-		sb.append(ACTION_ASK);
-		addParam(sb, true, CHAR_VERSION, String.valueOf(PROTOCOL_VERSION));
-		if (myLocation != null)
-		{
-			addParam(sb, true, CHAR_LONGITUDE, String.valueOf(myLocation.getLongitude()));
-			addParam(sb, true, CHAR_LATITUDE, String.valueOf(myLocation.getLatitude()));
-		}
-		if (sms)
-			sb.append(' ');
-		return sb.toString();
+		return createBasicUrl(sms, myLocation, ACTION_ASK);
 	}
 }
