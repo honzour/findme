@@ -13,7 +13,10 @@ public class Handling {
 		if (host.equals(FindMeUrl.ACTION_ASK))
 		{
 			tryToHandlePosition(from, uri, null);
-			Position.findMyPosition(300, new Position.Callback() {
+			
+			// TODO handle dialog, autoreply, won't tell you reply etc
+						
+			Position.findMyPosition(Settings.gpsTimeout, new Position.Callback() {
 				
 				@Override
 				public void onTimeout() {

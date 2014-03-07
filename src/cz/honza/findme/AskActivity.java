@@ -60,7 +60,7 @@ public class AskActivity extends Activity {
 				
 				if (attach.isChecked())
 				{
-					Position.findMyPosition(300, new SendCallback(numberValue));
+					Position.findMyPosition(Settings.gpsTimeout, new SendCallback(numberValue));
 				}
 				else
 				{
