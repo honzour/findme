@@ -16,6 +16,11 @@ public class Util {
 	
 	protected static void sendSMS(String number, String message)
 	{
+		if (Settings.fakeSMS)
+		{
+			toast(number + ' ' + message);
+			return;
+		}
 		SmsManager manager = SmsManager.getDefault();
 		manager.sendTextMessage(number, null, message, null, null);
 	}
