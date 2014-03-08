@@ -51,7 +51,7 @@ public class Handling {
 		tryToHandleIncomingPosition(from, uri, new Runnable() {
 			@Override
 			public void run() {
-				Util.toast(R.string.reply_without_location);					
+				Util.toast(R.string.reply_without_location);
 			}
 		});
 	}
