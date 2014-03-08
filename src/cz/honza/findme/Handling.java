@@ -21,11 +21,16 @@ public class Handling {
 		switch (replyMode)
 		{
 		case Preferences.REPLY_SETTINGS_MODE_DO_NOT_REPLY:
+			break;
+		case Preferences.REPLY_SETTINGS_MODE_REPLY_SECRET:
+			sendReply(from, FindMeUrl.NO_LOCATION_WILL_NOT_TELL_YOU);
+			break;
+		case Preferences.REPLY_SETTINGS_MODE_REPLY_ALL:
 			Position.findMyPosition(Settings.gpsTimeout, new Position.Callback() {
 				
 				@Override
 				public void onTimeout() {
-					sendReply(from, null);					
+					sendReply(from, FindMeUrl.NO_LOCATION_TIMEOUT);					
 				}
 				
 				@Override
@@ -35,13 +40,9 @@ public class Handling {
 				
 				@Override
 				public void onError(int errorCode) {
-					sendReply(from, null);
+					sendReply(from, FindMeUrl.NO_LOCATION_ERROR);
 				}
 			});
-			break;
-		case Preferences.REPLY_SETTINGS_MODE_REPLY_SECRET:
-			break;
-		case Preferences.REPLY_SETTINGS_MODE_REPLY_ALL:
 			break;
 		}			
 	}
@@ -105,18 +106,24 @@ public class Handling {
 			}
 			catch (NumberFormatException e)
 			{
-				// ignore
+				// ignore now, call onError later
 			}
 		}
 		if (onError != null)
 		{
-			// TODO
+			onError.run();
 		}
 	}
 	
 	protected static void sendReply(String to, Location location)
 	{
-		String message = FindMeUrl.createReplyUrl(true, location);
+		String message = FindMeUrl.createReplyUrl(location);
+		Util.sendSMS(to, message);
+	}
+	
+	protected static void sendReply(String to, int whyNoLocation)
+	{
+		String message = FindMeUrl.createReplyUrl(whyNoLocation);
 		Util.sendSMS(to, message);
 	}
 }

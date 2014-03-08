@@ -27,7 +27,7 @@ public class AskActivity extends Activity {
 		
 		@Override
 		public void onMyPositionFound(Location location) {
-			String url = FindMeUrl.createAskUrl(true, location);
+			String url = FindMeUrl.createAskUrl(location);
 			readyToSendSms(url, mNumber);
 		}
 		
@@ -64,7 +64,7 @@ public class AskActivity extends Activity {
 				}
 				else
 				{
-					String url = FindMeUrl.createAskUrl(true, null);
+					String url = FindMeUrl.createAskUrl(null);
 					readyToSendSms(url, number.getText().toString());
 				}
 				finish();

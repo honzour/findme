@@ -11,6 +11,11 @@ public class FindMeUrl {
 	public static final char CHAR_VERSION = 'v';
 	public static final char CHAR_LONGITUDE = 'o';
 	public static final char CHAR_LATITUDE = 'a';
+	public static final char CHAR_NO_LOCATION = 'n';
+	
+	public static final int NO_LOCATION_TIMEOUT = 0;
+	public static final int NO_LOCATION_ERROR = 1;
+	public static final int NO_LOCATION_WILL_NOT_TELL_YOU = 2;
 	
 	private static final int PROTOCOL_VERSION = 1;
 	
@@ -67,28 +72,45 @@ public class FindMeUrl {
 		sb.append(urlEncode(value));
 	}
 	
-	protected static String createBasicUrl(boolean sms, Location myLocation, String action)
+	protected static StringBuffer createUrlStart(String action)
 	{
 		StringBuffer sb = new StringBuffer(URL_START);
 		sb.append(action);
 		addParam(sb, true, CHAR_VERSION, String.valueOf(PROTOCOL_VERSION));
+		return sb;
+	}
+	
+	protected static String createUrlEnd(StringBuffer sb)
+	{
+		sb.append(' ');
+		return sb.toString();
+	}
+	
+	protected static String createBasicUrl(Location myLocation, String action)
+	{
+		StringBuffer sb = createUrlStart(action);
 		if (myLocation != null)
 		{
 			addParam(sb, false, CHAR_LONGITUDE, String.valueOf(myLocation.getLongitude()));
 			addParam(sb, false, CHAR_LATITUDE, String.valueOf(myLocation.getLatitude()));
 		}
-		if (sms)
-			sb.append(' ');
-		return sb.toString();
+		return createUrlEnd(sb);
 	}
 	
-	public static String createReplyUrl(boolean sms, Location myLocation)
+	public static String createReplyUrl(int whyNoLocation)
 	{
-		return createBasicUrl(sms, myLocation, ACTION_REPLY);
+		StringBuffer sb = createUrlStart(ACTION_REPLY);
+		addParam(sb, false, CHAR_NO_LOCATION, String.valueOf(whyNoLocation));
+		return createUrlEnd(sb);
 	}
 	
-	public static String createAskUrl(boolean sms, Location myLocation)
+	public static String createReplyUrl(Location myLocation)
 	{
-		return createBasicUrl(sms, myLocation, ACTION_ASK);
+		return createBasicUrl(myLocation, ACTION_REPLY);
+	}
+	
+	public static String createAskUrl(Location myLocation)
+	{
+		return createBasicUrl( myLocation, ACTION_ASK);
 	}
 }
