@@ -62,6 +62,7 @@ public class Handling {
 		if (host.equals(FindMeUrl.ACTION_ASK))
 		{
 			handleAsk(from, uri);
+			return;
 		}
 		
 		if (host.equals(FindMeUrl.ACTION_REPLY))
