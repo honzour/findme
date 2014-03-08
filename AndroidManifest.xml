@@ -48,6 +48,13 @@
             android:name="cz.honza.findme.ShowPositionActivity"
             android:label="@string/show_position" >
         </activity>
+        <activity
+            android:name="cz.honza.findme.ShowErrorActivity"
+            >
+        </activity>
+        
+        
+        ShowErrorActivity
     </application>
 
 </manifest>

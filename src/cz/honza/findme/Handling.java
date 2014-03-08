@@ -47,12 +47,28 @@ public class Handling {
 		}			
 	}
 	
-	protected static void handleReply(final String from, Uri uri)
+	protected static void handleReply(final String from, final Uri uri)
 	{
 		tryToHandleIncomingPosition(from, uri, new Runnable() {
 			@Override
 			public void run() {
-				Util.toast(R.string.reply_without_location);
+				// no valid location
+				int error = -1;
+				try
+				{
+					error = Integer.valueOf(uri.getQueryParameter(String.valueOf(FindMeUrl.CHAR_NO_LOCATION))).intValue();
+				}
+				catch (Exception e)
+				{
+					
+				}
+				// TODO
+				Intent intent = new Intent(FindMeApplication.sInstance, ShowErrorActivity.class);
+				intent.putExtra(ShowErrorActivity.EXTRA_CAPTION, FindMeApplication.sInstance.getResources().getString(R.string.reply_without_location));
+				intent.putExtra(ShowErrorActivity.EXTRA_TEXT, FindMeApplication.sInstance.getResources().getString(R.string.reply_without_location));
+				intent.putExtra(ShowPositionActivity.EXTRA_TIME, Calendar.getInstance());
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				FindMeApplication.sInstance.startActivity(intent);
 			}
 		});
 	}
