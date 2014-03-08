@@ -12,7 +12,7 @@ public class Handling {
 		String host = uri.getHost();
 		if (host.equals(FindMeUrl.ACTION_ASK))
 		{
-			tryToHandlePosition(from, uri, null);
+			tryToHandleIncomingPosition(from, uri, null);
 			
 			// TODO handle dialog, autoreply, won't tell you reply etc
 						
@@ -38,7 +38,7 @@ public class Handling {
 		
 		if (host.equals(FindMeUrl.ACTION_REPLY))
 		{
-			tryToHandlePosition(from, uri, new Runnable() {
+			tryToHandleIncomingPosition(from, uri, new Runnable() {
 				@Override
 				public void run() {
 					Util.toast(R.string.reply_without_location);					
@@ -65,7 +65,7 @@ public class Handling {
 		FindMeApplication.sInstance.startActivity(intent);
 	}
 	
-	protected static void tryToHandlePosition(String from, Uri uri, Runnable onError)
+	protected static void tryToHandleIncomingPosition(String from, Uri uri, Runnable onError)
 	{
 		String host = uri.getHost();
 		String lon = uri.getQueryParameter(String.valueOf(FindMeUrl.CHAR_LONGITUDE));
