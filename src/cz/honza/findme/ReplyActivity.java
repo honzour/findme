@@ -41,7 +41,7 @@ public class ReplyActivity extends Activity {
 				int res;
 				
 				if (item < 0 || item > 2)
-					item = Preferences.REPLY_SETTINGS_MODE_REPLY_ALL;
+					item = Preferences.REPLY_SETTINGS_MODE_DEFAULT;
 
 				switch (item)
 				{

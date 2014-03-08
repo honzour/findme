@@ -28,7 +28,7 @@ public class SMSReceiver extends BroadcastReceiver {
 	public void onReceive(Context content, Intent intent) {
 		
 		SharedPreferences prefs = FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, Context.MODE_PRIVATE);
-		int mode = prefs.getInt(Preferences.REPLY_SETTINGS_MODE, Preferences.REPLY_SETTINGS_MODE_REPLY_ALL);
+		int mode = prefs.getInt(Preferences.REPLY_SETTINGS_MODE, Preferences.REPLY_SETTINGS_MODE_DEFAULT);
 		
 		if (mode == Preferences.REPLY_SETTINGS_MODE_DO_NOT_REPLY)
 			return;

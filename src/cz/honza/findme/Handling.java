@@ -2,20 +2,25 @@ package cz.honza.findme;
 
 import java.util.Calendar;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.net.Uri;
 
 public class Handling {
-	public static void handleUri(final String from, Uri uri)
+	
+	protected static void handleAsk(final String from, Uri uri)
 	{
-		String host = uri.getHost();
-		if (host.equals(FindMeUrl.ACTION_ASK))
+		tryToHandleIncomingPosition(from, uri, null);
+		
+		SharedPreferences prefs = FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, 
+				Context.MODE_PRIVATE);
+		
+		int replyMode = prefs.getInt(Preferences.REPLY_SETTINGS_MODE, Preferences.REPLY_SETTINGS_MODE_DEFAULT);
+		switch (replyMode)
 		{
-			tryToHandleIncomingPosition(from, uri, null);
-			
-			// TODO handle dialog, autoreply, won't tell you reply etc
-						
+		case Preferences.REPLY_SETTINGS_MODE_DO_NOT_REPLY:
 			Position.findMyPosition(Settings.gpsTimeout, new Position.Callback() {
 				
 				@Override
@@ -33,17 +38,35 @@ public class Handling {
 					sendReply(from, null);
 				}
 			});
-			return;
+			break;
+		case Preferences.REPLY_SETTINGS_MODE_REPLY_SECRET:
+			break;
+		case Preferences.REPLY_SETTINGS_MODE_REPLY_ALL:
+			break;
+		}			
+	}
+	
+	protected static void handleReply(final String from, Uri uri)
+	{
+		tryToHandleIncomingPosition(from, uri, new Runnable() {
+			@Override
+			public void run() {
+				Util.toast(R.string.reply_without_location);					
+			}
+		});
+	}
+	
+	public static void handleUri(final String from, Uri uri)
+	{
+		String host = uri.getHost();
+		if (host.equals(FindMeUrl.ACTION_ASK))
+		{
+			handleAsk(from, uri);
 		}
 		
 		if (host.equals(FindMeUrl.ACTION_REPLY))
 		{
-			tryToHandleIncomingPosition(from, uri, new Runnable() {
-				@Override
-				public void run() {
-					Util.toast(R.string.reply_without_location);					
-				}
-			});
+			handleReply(from, uri);
 			return;
 		}
 	}
