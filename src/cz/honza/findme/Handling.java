@@ -54,6 +54,7 @@ public class Handling {
 			public void run() {
 				// no valid location
 				int error = -1;
+				
 				try
 				{
 					error = Integer.valueOf(uri.getQueryParameter(String.valueOf(FindMeUrl.CHAR_NO_LOCATION))).intValue();
@@ -62,10 +63,23 @@ public class Handling {
 				{
 					
 				}
-				// TODO
+				switch (error)
+				{
+				case FindMeUrl.NO_LOCATION_ERROR:
+					error = R.string.sender_no_gps;
+					break;
+				case FindMeUrl.NO_LOCATION_TIMEOUT:
+					error = R.string.sender_timeout;
+					break;
+				case FindMeUrl.NO_LOCATION_WILL_NOT_TELL_YOU:
+					error = R.string.sender_will_not_tell_you;
+					break;
+				default:
+					error = R.string.reply_without_location;
+				}
 				Intent intent = new Intent(FindMeApplication.sInstance, ShowErrorActivity.class);
 				intent.putExtra(ShowErrorActivity.EXTRA_CAPTION, FindMeApplication.sInstance.getResources().getString(R.string.reply_without_location));
-				intent.putExtra(ShowErrorActivity.EXTRA_TEXT, FindMeApplication.sInstance.getResources().getString(R.string.reply_without_location));
+				intent.putExtra(ShowErrorActivity.EXTRA_TEXT, FindMeApplication.sInstance.getResources().getString(error));
 				intent.putExtra(ShowPositionActivity.EXTRA_TIME, Calendar.getInstance());
 				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				FindMeApplication.sInstance.startActivity(intent);

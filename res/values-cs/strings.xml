@@ -52,4 +52,9 @@
     <string name="incoming_position_reply">Přišla pozice - odpověď</string>
     <string name="reply_without_location">Přišla odpověď bez pozice</string>
     
+    <!-- Show Error -->
+    <string name="sender_no_gps">Odesílatel nezná svoji pozici</string>
+    <string name="sender_will_not_tell_you">Odesílatel nechce sdělit svoji pozici</string>
+    <string name="sender_timeout">Odesílateli se nechytla GPS</string>
+    
 </resources>
