@@ -51,8 +51,8 @@
     <string name="reply_without_location">I have got a reply without location</string>
     
     <!-- Show Error -->
-    <string name="sender_no_gps">Odesílatel nezná svoji pozici</string>
-    <string name="sender_will_not_tell_you">Odesílatel nechce sdělit svoji pozici</string>
-    <string name="sender_timeout">Odesílateli se nechytla GPS</string>
+    <string name="sender_no_gps">Sender does not know his location</string>
+    <string name="sender_will_not_tell_you">Sender does not want to tel you his location</string>
+    <string name="sender_timeout">GPS timeout on sender side</string>
 
 </resources>
