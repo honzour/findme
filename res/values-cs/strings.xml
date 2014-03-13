@@ -24,7 +24,7 @@
 
     
     <string name="reply_mode_reply_all">Pokud přijde dotaz prostřednictvím SMS, program odpoví. Spustí GPS, zjistí Vaši pozici a pošle ji prostřednictvím SMS. Každý se tak dozví, kde jste.</string>
-    <string name="reply_mode_do_not_reply">Pokud přijde dotaz prostřednictvím SMS, program to bude ignorovat. Přesně jako kdybyste si program odinstalovali.</string>
+    <string name="reply_mode_do_not_reply">Pokud přijde dotaz prostřednictvím SMS, program to bude ignorovat.</string>
     <string name="reply_mode_reply_secret">Pokud přijde dotaz prostřednictvím SMS, program odpoví, že neřekne. Každý se tak dozví, že máte nainstalovanou aplikaci, ale už ne, kde jste.</string>
     
     <string name="ask_sms">Zeptej se před odesláním SMS odpovědi</string>

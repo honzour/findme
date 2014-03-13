@@ -3,7 +3,6 @@ package cz.honza.findme;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
@@ -26,12 +25,6 @@ public class SMSReceiver extends BroadcastReceiver {
 	
 	@Override
 	public void onReceive(Context content, Intent intent) {
-		
-		SharedPreferences prefs = FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, Context.MODE_PRIVATE);
-		int mode = prefs.getInt(Preferences.REPLY_SETTINGS_MODE, Preferences.REPLY_SETTINGS_MODE_DEFAULT);
-		
-		if (mode == Preferences.REPLY_SETTINGS_MODE_DO_NOT_REPLY)
-			return;
 		
 		Bundle extras = intent.getExtras();
 
