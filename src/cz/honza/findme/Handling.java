@@ -147,7 +147,15 @@ public class Handling {
 	
 	protected static void sendReply(String to, String message)
 	{
-		Util.sendSMS(to, message);
+		SharedPreferences prefs = FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, Context.MODE_PRIVATE);
+		final boolean ask = prefs.getBoolean(Preferences.REPLY_SETTINGS_ASK_SMS, Preferences.REPLY_SETTINGS_ASK_SMS_DEFAULT);
+		final boolean autoreply = prefs.getBoolean(Preferences.REPLY_SETTINGS_ASK_AUTOREPLY, Preferences.REPLY_SETTINGS_ASK_AUTOREPLY_DEFAULT);
+		if (ask) 
+		{
+			// TODO
+		}
+		else
+			Util.sendSMS(to, message);
 	}
 	
 	protected static void sendReply(String to, Location location)

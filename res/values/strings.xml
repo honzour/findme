@@ -54,5 +54,9 @@
     <string name="sender_no_gps">Sender does not know his location</string>
     <string name="sender_will_not_tell_you">Sender does not want to tell you his location</string>
     <string name="sender_timeout">GPS timeout on sender side</string>
+    
+    <!-- Ask SMS -->
+    <string name="really_send_sms">Really send SMS?</string>
+    
 
 </resources>

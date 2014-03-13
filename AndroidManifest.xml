@@ -34,27 +34,25 @@
         </activity>
         <activity
             android:name="cz.honza.findme.AskActivity"
-            android:label="@string/ask_settings" >
-        </activity>
+            android:label="@string/ask_settings" />
         <activity
             android:name="cz.honza.findme.ReplyActivity"
-            android:label="@string/reply_settings" >
-        </activity>
+            android:label="@string/reply_settings" />
         <activity
             android:name="cz.honza.findme.MyPositionActivity"
-            android:label="@string/my_position" >
-        </activity>
+            android:label="@string/my_position" />
         <activity
             android:name="cz.honza.findme.ShowPositionActivity"
-            android:label="@string/show_position" >
-        </activity>
+            android:label="@string/show_position" />
         <activity
             android:name="cz.honza.findme.ShowErrorActivity"
-            >
-        </activity>
+            />
         
-        
-        ShowErrorActivity
+        <activity
+            android:name="cz.honza.findme.AskSMSActivity"
+            android:label="@string/really_send_sms"
+            />
+            
     </application>
 
 </manifest>

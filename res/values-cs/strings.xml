@@ -57,4 +57,7 @@
     <string name="sender_will_not_tell_you">Odesílatel nechce sdělit svoji pozici</string>
     <string name="sender_timeout">Odesílateli se nechytla GPS</string>
     
+     <!-- Ask SMS -->
+    <string name="really_send_sms">Opravdu poslat SMS?</string>
+    
 </resources>
