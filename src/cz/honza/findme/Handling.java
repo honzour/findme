@@ -149,10 +149,15 @@ public class Handling {
 	{
 		SharedPreferences prefs = FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, Context.MODE_PRIVATE);
 		final boolean ask = prefs.getBoolean(Preferences.REPLY_SETTINGS_ASK_SMS, Preferences.REPLY_SETTINGS_ASK_SMS_DEFAULT);
-		final boolean autoreply = prefs.getBoolean(Preferences.REPLY_SETTINGS_ASK_AUTOREPLY, Preferences.REPLY_SETTINGS_ASK_AUTOREPLY_DEFAULT);
 		if (ask) 
 		{
-			// TODO
+			final boolean autoreply = prefs.getBoolean(Preferences.REPLY_SETTINGS_ASK_AUTOREPLY, Preferences.REPLY_SETTINGS_ASK_AUTOREPLY_DEFAULT);
+			Intent intent = new Intent(FindMeApplication.sInstance, ConfirmSMSActivity.class);
+			intent.putExtra(ConfirmSMSActivity.EXTRA_TO, to);
+			intent.putExtra(ConfirmSMSActivity.EXTRA_MESSAGE, message);
+			intent.putExtra(ConfirmSMSActivity.EXTRA_AUTOREPLY, autoreply);
+			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			FindMeApplication.sInstance.startActivity(intent);
 		}
 		else
 			Util.sendSMS(to, message);
