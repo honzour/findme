@@ -145,15 +145,20 @@ public class Handling {
 		}
 	}
 	
+	protected static void sendReply(String to, String message)
+	{
+		Util.sendSMS(to, message);
+	}
+	
 	protected static void sendReply(String to, Location location)
 	{
 		String message = FindMeUrl.createReplyUrl(location);
-		Util.sendSMS(to, message);
+		sendReply(to, message);
 	}
 	
 	protected static void sendReply(String to, int whyNoLocation)
 	{
 		String message = FindMeUrl.createReplyUrl(whyNoLocation);
-		Util.sendSMS(to, message);
+		sendReply(to, message);
 	}
 }
