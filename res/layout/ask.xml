@@ -13,20 +13,20 @@
     		android:layout_height="wrap_content"
     		android:textColor="@color/form_text"
     		android:text="@string/where_is_phone"
-    		android:layout_marginBottom="10dp"
+    		android:layout_marginBottom="@dimen/common_margin"
     	    />
     	<EditText
     	    android:id="@+id/ask_number"
     	    android:layout_width="fill_parent"
     		android:layout_height="wrap_content"
     		android:hint="@string/common_phone_number"
-    		android:layout_marginBottom="10dp"
+    		android:layout_marginBottom="@dimen/common_margin"
     	    />
     	<LinearLayout
     	    android:orientation="horizontal"
     	    android:layout_width="fill_parent"
     		android:layout_height="wrap_content"
-    		android:layout_marginBottom="10dp"
+    		android:layout_marginBottom="@dimen/common_margin"
     	    >
     		<CheckBox
     		    android:id="@+id/ask_attach"

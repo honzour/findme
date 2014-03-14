@@ -4,10 +4,10 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:background="@color/form_background"
-    android:padding="10dp">
+    android:padding="@dimen/common_margin">
 
     <TextView
-        android:textSize="20sp"
+        android:textSize="@dimen/big_text"
         android:id="@+id/caption"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
