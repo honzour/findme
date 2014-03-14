@@ -24,4 +24,10 @@
         android:layout_height="wrap_content"
         android:text="@string/reply_settings" />
     
+    <Button
+        android:id="@+id/fake_receive"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fake_sms" />
+    
 </LinearLayout>
