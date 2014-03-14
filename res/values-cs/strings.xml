@@ -59,5 +59,7 @@
     
      <!-- Ask SMS -->
     <string name="really_send_sms">Opravdu poslat SMS?</string>
+    <string name="send">Poslat</string>
+    <string name="do_not_send">Neposílat</string>
     
 </resources>

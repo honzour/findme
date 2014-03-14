@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/form_background"
+    android:padding="@dimen/common_margin">
+
+    <TextView
+        android:textSize="@dimen/big_text"
+        android:id="@+id/caption"
+        android:text="@string/really_send_sms"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/form_text"
+        />
+   
+    <Button
+        android:id="@+id/send"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send" />
+    
+    <Button
+        android:id="@+id/do_not_send"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/do_not_send" />
+    
+</LinearLayout>
