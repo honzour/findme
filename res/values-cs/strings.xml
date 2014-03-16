@@ -12,6 +12,9 @@
     <string name="fake_sms">Simulovaná SMS</string>
     <string name="fake_sms_long">Simulovaná příchozí SMS. Jen pro ladění a testování.</string>
     
+     <!-- Fake SMS -->
+    <string name="common_findme_url">findme://ask?v=1&amp;a=50&amp;o=14</string>
+    
     <!-- My Position -->
     <string name="open_last">Otevři poslední</string>
     <string name="longitude">délka</string>

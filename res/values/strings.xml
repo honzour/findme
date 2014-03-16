@@ -11,6 +11,9 @@
     <string name="fake_sms">Fake SMS</string>
     <string name="fake_sms_long">Emulate receive of an SMS. Useful for debugging and testing only.</string>
     
+    <!-- Fake SMS -->
+    <string name="common_findme_url">findme://ask?v=1&amp;a=50&amp;o=14</string>
+    
     <!-- My Position -->
     <string name="open_last">Open last</string>
     <string name="longitude">longitude</string>

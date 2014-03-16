@@ -9,7 +9,7 @@ public class SettingsActivity extends FindmeActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings);
 		
-		
+		setStartActivityView(R.id.fake_sms, FakeSMSActivity.class);
 	}
 	
 	
