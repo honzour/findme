@@ -5,7 +5,11 @@
     <string name="my_position">My Position</string>
     <string name="ask_settings">Requests</string>
     <string name="reply_settings">Reply Setings</string>
+    <string name="settings">Settings</string>
+    
+    <!-- Settings -->
     <string name="fake_sms">Fake SMS</string>
+    <string name="fake_sms_long">Emulate receive of an SMS. Useful for debugging and testing only.</string>
     
     <!-- My Position -->
     <string name="open_last">Open last</string>

@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/form_background"
+    android:padding="@dimen/common_margin">
+
+    
+   
+   	<Button
+        android:id="@+id/fake_sms"
+   	    android:layout_width="fill_parent"
+       	android:layout_height="wrap_content"
+       	android:text="@string/fake_sms" />
+   	
+   	<TextView
+   	    android:text="@string/fake_sms_long"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/form_text" />
+   	 
+</LinearLayout>

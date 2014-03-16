@@ -6,7 +6,11 @@
     <string name="my_position">Moje pozice</string>
     <string name="ask_settings">Otázky</string>
     <string name="reply_settings">Nastavení odpovědí</string>
+    <string name="settings">Nastavení</string>
+    
+    <!-- Settings -->
     <string name="fake_sms">Simulovaná SMS</string>
+    <string name="fake_sms_long">Simulovaná příchozí SMS. Jen pro ladění a testování.</string>
     
     <!-- My Position -->
     <string name="open_last">Otevři poslední</string>

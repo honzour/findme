@@ -25,9 +25,9 @@
         android:text="@string/reply_settings" />
     
     <Button
-        android:id="@+id/fake_receive"
+        android:id="@+id/settings"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/fake_sms" />
+        android:text="@string/settings" />
     
 </LinearLayout>

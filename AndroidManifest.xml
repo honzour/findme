@@ -49,6 +49,9 @@
         <activity
             android:name="cz.honza.findme.ConfirmSMSActivity"
             android:label="@string/really_send_sms" />
+        <activity
+            android:name="cz.honza.findme.SettingsActivity"
+            android:label="@string/settings" />
     </application>
 
 </manifest>
