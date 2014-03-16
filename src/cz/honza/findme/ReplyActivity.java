@@ -8,10 +8,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.app.Activity;
 import android.content.SharedPreferences;
 
-public class ReplyActivity extends Activity {
+public class ReplyActivity extends FindmeActivity {
 	
 
 

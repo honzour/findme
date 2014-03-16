@@ -1,11 +1,10 @@
 package cz.honza.findme;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class ShowErrorActivity extends Activity {
+public class ShowErrorActivity extends FindmeActivity {
 	public static final String EXTRA_CAPTION = "EXTRA_CAPTION";
 	public static final String EXTRA_TEXT = "EXTRA_TEXT";
 	@Override

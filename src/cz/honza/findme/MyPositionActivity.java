@@ -9,12 +9,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class MyPositionActivity extends Activity {
+public class MyPositionActivity extends FindmeActivity {
 	
 	protected LocationManager mlocManager;
 	protected LocationListener mlocListener;

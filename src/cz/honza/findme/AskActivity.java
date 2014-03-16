@@ -6,10 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.app.Activity;
 import android.content.Context;
 
-public class AskActivity extends Activity {
+public class AskActivity extends FindmeActivity {
 
 	private static class SendCallback implements Position.Callback
 	{
