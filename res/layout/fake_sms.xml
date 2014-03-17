@@ -42,7 +42,7 @@
     		android:layout_marginBottom="@dimen/common_margin" />
     	
    	    <Button
-   	        android:id="@+id/reeive_sms"
+   	        android:id="@+id/receive_sms"
    	        android:text="@string/fake_sms"
    	        android:layout_width="fill_parent"
    			android:layout_height="wrap_content" />

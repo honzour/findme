@@ -10,6 +10,20 @@ import android.net.Uri;
 
 public class Handling {
 	
+	public static boolean handleSMS(String from, String message)
+	{
+		Uri uri = FindMeUrl.uriFromSms(message);
+		if (uri == null)
+		{
+			return false;
+		}
+		else
+		{
+			Handling.handleUri(from, uri);
+			return true;
+		}
+	}
+	
 	protected static void handleAsk(final String from, Uri uri)
 	{
 		tryToHandleIncomingPosition(from, uri, null);
