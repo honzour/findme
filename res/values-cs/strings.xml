@@ -16,7 +16,7 @@
     <string name="common_findme_url">findme://ask?v=1&amp;a=50&amp;o=14</string>
     <string name="from">Odesílatel:</string>
     <string name="message">Zpráva:</string>
-    <string name="fake_sms_help">Program zpracuje tuto emulovanou příhozí SMS jako pravdickou SMS. Pozor, můžete tím přimět program, aby odeslal skutečnou SMS jako odpověď.</string>
+    <string name="fake_sms_help">Program zpracuje tuto emulovanou příhozí SMS jako opravdovou SMS. Pozor, můžete tím přimět program, aby odeslal skutečnou SMS jako odpověď.</string>
     
     <!-- My Position -->
     <string name="open_last">Otevři poslední</string>
