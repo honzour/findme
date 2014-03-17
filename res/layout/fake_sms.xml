@@ -8,6 +8,18 @@
     	android:layout_height="fill_parent"
     	android:orientation="vertical"
     	android:layout_margin="@dimen/common_margin">
+    	
+	    <TextView
+	        android:textColor="@color/form_text"
+	        android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:text="@string/fake_sms_help" />
+	    
+	    <TextView
+	        android:textColor="@color/form_text"
+	        android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:text="@string/from" />
 
     	<EditText
     	    android:id="@+id/from_number"
@@ -15,6 +27,13 @@
     		android:layout_height="wrap_content"
     		android:hint="@string/common_phone_number"
     		android:layout_marginBottom="@dimen/common_margin" />
+    	
+	    <TextView
+	        android:textColor="@color/form_text"
+	        android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:text="@string/message" />
+    	
     	<EditText
     	    android:id="@+id/message"
     	    android:layout_width="fill_parent"
