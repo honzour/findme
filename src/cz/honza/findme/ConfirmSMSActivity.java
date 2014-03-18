@@ -3,6 +3,7 @@ package cz.honza.findme;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class ConfirmSMSActivity extends Activity {
 	public static final String EXTRA_TO = "EXTRA_TO"; 
@@ -29,6 +30,12 @@ public class ConfirmSMSActivity extends Activity {
 		
 		final String to = extras.getString(EXTRA_TO);
 		final String message = extras.getString(EXTRA_MESSAGE);
+		
+		final TextView toView = (TextView)findViewById(R.id.number);
+		final TextView messageView = (TextView)findViewById(R.id.message);
+		toView.setText(to);
+		messageView.setText(message);
+		
 		final boolean autoreply = extras.getBoolean(EXTRA_AUTOREPLY);
 		
 		View progress = findViewById(R.id.progress);
