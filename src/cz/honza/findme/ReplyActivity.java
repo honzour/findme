@@ -18,7 +18,7 @@ public class ReplyActivity extends FindmeActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reply);
-        SharedPreferences prefs = getSharedPreferences(Preferences.PRORAM_SETTINGS, MODE_PRIVATE);
+        SharedPreferences prefs = Util.getPreferences();
     
         // Spinner mode
         
@@ -88,7 +88,7 @@ public class ReplyActivity extends FindmeActivity {
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				SharedPreferences prefs = getSharedPreferences(Preferences.PRORAM_SETTINGS, MODE_PRIVATE);
+				SharedPreferences prefs = Util.getPreferences();
 				SharedPreferences.Editor e = prefs.edit();
 				e.putBoolean(key, isChecked);
 				e.commit();

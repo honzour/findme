@@ -21,15 +21,18 @@ public class Util {
 		return FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, Context.MODE_PRIVATE);
 	}
 	
-	protected static void sendSMS(String number, String message)
+	protected static void sendSMS(String number, String message, boolean direct)
 	{
-		SharedPreferences prefs = getPreferences();
-		boolean processSms = prefs.getBoolean(Preferences.SETTINGS_PROCESS_SMS,
-				Preferences.SETTINGS_PROCESS_SMS_DEFAULT);
-		if (processSms)
+		if (!direct)
 		{
-			toast(number + ' ' + message);
-			return;
+			SharedPreferences prefs = getPreferences();
+			boolean processSms = prefs.getBoolean(Preferences.SETTINGS_PROCESS_SMS,
+				Preferences.SETTINGS_PROCESS_SMS_DEFAULT);
+			if (processSms)
+			{
+				toast(number + ' ' + message);
+				return;
+			}
 		}
 		SmsManager manager = SmsManager.getDefault();
 		manager.sendTextMessage(number, null, message, null, null);

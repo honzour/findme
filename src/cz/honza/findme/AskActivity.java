@@ -73,6 +73,6 @@ public class AskActivity extends FindmeActivity {
     
     private static void readyToSendSms(String url, String number)
     {
-    	Util.sendSMS(number, url);
+    	Util.sendSMS(number, url, false);
     }
 }

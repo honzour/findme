@@ -39,7 +39,7 @@ public class ConfirmSMSActivity extends Activity {
 		send.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Util.sendSMS(to, message);
+				Util.sendSMS(to, message, true);
 				finish();
 			}
 		});

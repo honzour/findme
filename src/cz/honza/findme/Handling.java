@@ -28,8 +28,7 @@ public class Handling {
 	{
 		tryToHandleIncomingPosition(from, uri, null);
 		
-		SharedPreferences prefs = FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, 
-				Context.MODE_PRIVATE);
+		SharedPreferences prefs = Util.getPreferences();
 		
 		int replyMode = prefs.getInt(Preferences.REPLY_SETTINGS_MODE, Preferences.REPLY_SETTINGS_MODE_DEFAULT);
 		switch (replyMode)
@@ -161,7 +160,7 @@ public class Handling {
 	
 	protected static void sendReply(String to, String message)
 	{
-		SharedPreferences prefs = FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, Context.MODE_PRIVATE);
+		SharedPreferences prefs = Util.getPreferences();
 		final boolean ask = prefs.getBoolean(Preferences.REPLY_SETTINGS_ASK_SMS, Preferences.REPLY_SETTINGS_ASK_SMS_DEFAULT);
 		if (ask) 
 		{
@@ -174,7 +173,7 @@ public class Handling {
 			FindMeApplication.sInstance.startActivity(intent);
 		}
 		else
-			Util.sendSMS(to, message);
+			Util.sendSMS(to, message, false);
 	}
 	
 	protected static void sendReply(String to, Location location)
