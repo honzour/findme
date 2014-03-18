@@ -35,7 +35,7 @@ public class ConfirmSMSActivity extends Activity {
 		if (!autoreply)
 			progress.setVisibility(View.GONE);
 		
-		View send = findViewById(R.id.do_not_send);
+		View send = findViewById(R.id.send);
 		send.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

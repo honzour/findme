@@ -12,14 +12,17 @@ public class SettingsActivity extends FindmeActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings);
 		
-		CheckBox processSms = (CheckBox) findViewById(R.id.process_outgoing_sms);
+		final CheckBox processSms = (CheckBox) findViewById(R.id.process_outgoing_sms);
+		final SharedPreferences prefs = Util.getPreferences();
+		final boolean isChecked = prefs.getBoolean(Preferences.SETTINGS_PROCESS_SMS, Preferences.SETTINGS_PROCESS_SMS_DEFAULT);
+		processSms.setChecked(isChecked);
 		processSms.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
 		{
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView,
 					boolean isChecked) {
-				SharedPreferences prefs = Util.getPreferences();
-				SharedPreferences.Editor e = prefs.edit();
+				final SharedPreferences prefs = Util.getPreferences();
+				final SharedPreferences.Editor e = prefs.edit();
 				e.putBoolean(Preferences.SETTINGS_PROCESS_SMS, isChecked);
 				e.commit();
 			}

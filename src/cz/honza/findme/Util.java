@@ -1,6 +1,7 @@
 package cz.honza.findme;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.telephony.SmsManager;
 import android.widget.Toast;
@@ -30,7 +31,12 @@ public class Util {
 				Preferences.SETTINGS_PROCESS_SMS_DEFAULT);
 			if (processSms)
 			{
-				toast(number + ' ' + message);
+				Intent intent = new Intent(FindMeApplication.sInstance, ConfirmSMSActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				intent.putExtra(ConfirmSMSActivity.EXTRA_AUTOREPLY, false);
+				intent.putExtra(ConfirmSMSActivity.EXTRA_MESSAGE, message);
+				intent.putExtra(ConfirmSMSActivity.EXTRA_TO, number);
+				FindMeApplication.sInstance.startActivity(intent);
 				return;
 			}
 		}
