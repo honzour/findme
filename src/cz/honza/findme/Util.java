@@ -24,8 +24,8 @@ public class Util {
 	protected static void sendSMS(String number, String message)
 	{
 		SharedPreferences prefs = getPreferences();
-		boolean processSms = prefs.getBoolean(Preferences.REPLY_SETTINGS_PROCESS_SMS,
-				Preferences.REPLY_SETTINGS_PROCESS_SMS_DEFAULT);
+		boolean processSms = prefs.getBoolean(Preferences.SETTINGS_PROCESS_SMS,
+				Preferences.SETTINGS_PROCESS_SMS_DEFAULT);
 		if (processSms)
 		{
 			toast(number + ' ' + message);

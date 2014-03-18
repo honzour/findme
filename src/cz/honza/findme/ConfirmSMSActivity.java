@@ -31,6 +31,10 @@ public class ConfirmSMSActivity extends Activity {
 		final String message = extras.getString(EXTRA_MESSAGE);
 		final boolean autoreply = extras.getBoolean(EXTRA_AUTOREPLY);
 		
+		View progress = findViewById(R.id.progress);
+		if (!autoreply)
+			progress.setVisibility(View.GONE);
+		
 		View send = findViewById(R.id.do_not_send);
 		send.setOnClickListener(new View.OnClickListener() {
 			@Override
