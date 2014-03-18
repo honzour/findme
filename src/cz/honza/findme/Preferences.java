@@ -18,4 +18,7 @@ public class Preferences {
 	
 	public static final String REPLY_SETTINGS_ASK_AUTOREPLY = "REPLY_SETTINGS_ASK_AUTOREPLY";
 	public static final boolean REPLY_SETTINGS_ASK_AUTOREPLY_DEFAULT = true;
+	
+	public static final String REPLY_SETTINGS_PROCESS_SMS = "REPLY_SETTINGS_PROCESS_SMS";
+	public static final boolean REPLY_SETTINGS_PROCESS_SMS_DEFAULT = false;
 }
