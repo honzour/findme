@@ -45,7 +45,9 @@
             android:name="cz.honza.findme.ShowPositionActivity"
             android:label="@string/show_position" />
         <activity
-            android:name="cz.honza.findme.ShowErrorActivity" />
+            android:name="cz.honza.findme.ShowErrorActivity"
+            android:label="@string/error"
+            />
         <activity
             android:name="cz.honza.findme.ConfirmSMSActivity"
             android:label="@string/really_send_sms" />

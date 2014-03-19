@@ -22,7 +22,6 @@ public class ShowErrorActivity extends FindmeActivity {
 		final String caption = extras.getString(EXTRA_CAPTION);
 		if (caption != null) 
 		{
-			setTitle(caption);
 			TextView captionView = (TextView)findViewById(R.id.caption);
 			captionView.setText(caption);
 		}
