@@ -28,6 +28,8 @@
         android:textColor="@color/form_text" />
     
     <ProgressBar
+        android:layout_marginTop="@dimen/common_margin"
+        style="@android:style/Widget.ProgressBar.Horizontal"
         android:id="@+id/progress"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
