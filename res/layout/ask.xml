@@ -59,8 +59,13 @@
     	        android:enabled="false"
     	        android:text="@string/push_query"
     	        android:layout_width="0px"
-    			android:layout_height="wrap_content"
-    	        />
+    			android:layout_height="wrap_content" />
     	</LinearLayout>
+    	<TextView
+    	    android:layout_marginTop="@dimen/common_margin"
+    	   	android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:textColor="@color/form_text"
+    		android:text="@string/findme_must_be_installed" />
 	</LinearLayout>
 </ScrollView>

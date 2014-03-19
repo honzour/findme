@@ -53,7 +53,8 @@
     <string name="sms_query">SMS dotaz</string>
     <string name="attach_my_position">Pošli s dotazem i svou pozici</string>
     <string name="gps_timeout">Nedaří se nalézt pozici přes GPS</string>
-    
+    <string name="findme_must_be_installed">Člověk, na jehož pozici se ptáte, musí mít také tuto aplikaci ve svém mobilu. V opačném případě mu jen přijde matoucí SMS obsahující findme:// URL.</string>
+        
     <!-- Show Position -->
     
     <string name="show_position">Zobraz pozici</string>
