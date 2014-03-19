@@ -71,6 +71,7 @@
     <string name="sender_will_not_tell_you">Odesílatel nechce sdělit svoji pozici</string>
     <string name="sender_timeout">Odesílateli se nechytla GPS</string>
     <string name="error">Chyba</string>
+    <string name="no_reason_in_message">Ve zprávě není zdůvodnění</string>
     
      <!-- Ask SMS -->
     <string name="really_send_sms">Opravdu poslat SMS?</string>

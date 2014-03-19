@@ -69,6 +69,7 @@
     <string name="sender_will_not_tell_you">Sender does not want to tell you his location</string>
     <string name="sender_timeout">GPS timeout on sender side</string>
     <string name="error">Error</string>
+    <string name="no_reason_in_message">No reason in a message</string>
     
     <!-- Ask SMS -->
     <string name="really_send_sms">Really send SMS?</string>

@@ -87,7 +87,7 @@ public class Handling {
 					error = R.string.sender_will_not_tell_you;
 					break;
 				default:
-					error = R.string.reply_without_location;
+					error = R.string.no_reason_in_message;
 				}
 				Intent intent = new Intent(FindMeApplication.sInstance, ShowErrorActivity.class);
 				intent.putExtra(ShowErrorActivity.EXTRA_CAPTION, FindMeApplication.sInstance.getResources().getString(R.string.reply_without_location));
