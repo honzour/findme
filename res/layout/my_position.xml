@@ -6,12 +6,6 @@
     android:gravity="center"
     android:background="@color/form_background"
     android:padding="@dimen/common_margin">
-
-    <Button
-        android:id="@+id/main_find_me"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name" />
     
     <Button
         android:id="@+id/main_open_last"

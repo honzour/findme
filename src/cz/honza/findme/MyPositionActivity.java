@@ -33,7 +33,6 @@ public class MyPositionActivity extends FindmeActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_position);
         
-        final View findMeButton = findViewById(R.id.main_find_me);
         final View openButton = findViewById(R.id.main_open_last);
         
         mLongitude = (TextView) findViewById(R.id.main_longitude);
@@ -42,14 +41,7 @@ public class MyPositionActivity extends FindmeActivity {
         mAccuracy = (TextView) findViewById(R.id.main_accuracy);
         
         mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-        
-        if (!mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-        {
-        	findMeButton.setEnabled(false);
-        	Util.toast(R.string.gps_disabled);
-        }
-        
-	    mlocListener = new LocationListener()
+    	mlocListener = new LocationListener()
 	    {
 			@Override
 			public void onLocationChanged(Location location) {
@@ -84,12 +76,6 @@ public class MyPositionActivity extends FindmeActivity {
 	    };
 
         
-        findMeButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-			    mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
-			}
-		});
         
         openButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -112,17 +98,6 @@ public class MyPositionActivity extends FindmeActivity {
 			    String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, lon);
 			    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
 			    
-			    /*
-			     just for testing
-			    /////////////////
-			    intent = new Intent(MyPositionActivity.this, ShowPositionActivity.class);
-				intent.putExtra(ShowPositionActivity.EXTRA_CAPTION, "Přišla pozice");
-				intent.putExtra(ShowPositionActivity.EXTRA_LON, lon);
-				intent.putExtra(ShowPositionActivity.EXTRA_LAT, lat);
-				intent.putExtra(ShowPositionActivity.EXTRA_NUMBER, "+420123456789");
-				intent.putExtra(ShowPositionActivity.EXTRA_TIME, Calendar.getInstance());
-			    //////////////////
-			    */
 			    MyPositionActivity.this.startActivity(intent);
 			}
 		});
@@ -130,7 +105,27 @@ public class MyPositionActivity extends FindmeActivity {
 
 	@Override
 	protected void onDestroy() {
-		mlocManager.removeUpdates(mlocListener);
+
 		super.onDestroy();
+	}
+
+	@Override
+	protected void onPause() {
+		if (mlocListener != null && mlocManager != null)
+			mlocManager.removeUpdates(mlocListener);
+		super.onPause();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+        if (!mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+        {
+        	Util.toast(R.string.gps_disabled);
+        }
+        else
+        {
+        	mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mlocListener);
+        }
 	}
 }
