@@ -57,6 +57,9 @@
          <activity
             android:name="cz.honza.findme.FakeSMSActivity"
             android:label="@string/fake_sms" />
+         <activity
+            android:name="cz.honza.findme.AboutActivity"
+            android:label="@string/about" />
     </application>
 
 </manifest>

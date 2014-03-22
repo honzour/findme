@@ -6,6 +6,7 @@
     <string name="ask_settings">Requests</string>
     <string name="reply_settings">Reply Setings</string>
     <string name="settings">Settings</string>
+    <string name="about">About</string>
     
     <!-- Settings -->
     <string name="fake_sms">Fake SMS</string>
@@ -76,5 +77,22 @@
     <string name="really_send_sms">Really send SMS?</string>
     <string name="send">Send</string>
     <string name="do_not_send">Don\'t sent</string>
+    
+    <!-- About -->
+    <string name="todo_list">TODO list</string>
+    <string name="todo_list_long">\n
+* History of communication\n
+* Contacts integration\n
+* Better request handling - service, notification\n
+* Other then GPS location sources\n
+* Pushes and the Internet\n
+* Project www pages\n
+* Public positions\n
+* Internal map\n
+* Friends\n
+* Encryption and signature\n
+* Slave mode\n
+* More than just location</string>
+    <string name="manual">This program can be used for loacalisation of a phone A by its GPS module, special SMS from a phone B and generated SMS reply from phone A. You must install the app to both phones and enable GPS in A. You will be able any time later to send a SMS from  B do A. The app in A will detect it, turn on GPS, sends a SMS to B. The app in B will detect it and shows GPS coordinates of A with an option to show it in an external map application.</string>
 
 </resources>

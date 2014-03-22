@@ -14,5 +14,6 @@ public class MainActivity extends FindmeActivity {
         setStartActivityView(R.id.ask_settings, AskActivity.class);
         setStartActivityView(R.id.reply_settings, ReplyActivity.class);
         setStartActivityView(R.id.settings, SettingsActivity.class);
+        setStartActivityView(R.id.about, AboutActivity.class);
     }
 }

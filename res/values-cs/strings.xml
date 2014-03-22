@@ -7,6 +7,7 @@
     <string name="ask_settings">Otázky</string>
     <string name="reply_settings">Nastavení odpovědí</string>
     <string name="settings">Nastavení</string>
+    <string name="about">O programu</string>
     
     <!-- Settings -->
     <string name="fake_sms">Simulovaná SMS</string>
@@ -79,4 +80,20 @@
     <string name="send">Poslat</string>
     <string name="do_not_send">Neposílat</string>
     
+    <!-- About -->
+    <string name="todo_list">Plán do dalších verzí</string>
+    <string name="manual">Program slouží pro lokalizaci telefonu A pomocí jeho GPS modulu, speciální SMS z telefonu B a generované SMS odpovědi z telefonu A. Nejprve musíte nainstalovat aplikaci do obou mobilů a u A povolit GPS. Kdykoli potom můžete tímto programem poslat speciální SMS z B do A. Program v A ji rozpozná, automaticky zpracuje. Poté zapne GPS přijímač, pošle speciální SMS do B. Program SMS rozpozná a zpracuje ji tak, že zobrazí souřadnice polohy mobilu A s možností zobrazení v mapové aplikaci.</string>
+        <string name="todo_list_long">\n
+* Historie komunikace\n
+* Kontakty\n
+* Lepší zpracování dotazů - service, notifikace\n
+* Pozice i jinak než přes GPS\n
+* Puše a Internet\n
+* www stránky projektu\n
+* Veřejné pozice\n
+* Integrovaná mapa\n
+* Přátelé\n
+* Šifrování a podpis\n
+* Otroctví\n
+* Víc než jen pozice</string>
 </resources>
