@@ -29,6 +29,22 @@
    		    />
    		
    		<TextView
+   		    android:text="@string/warning"
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:textColor="@color/form_text"
+			android:textSize="@dimen/big_text"
+   		    />
+   		
+   		<TextView
+   		    android:text="@string/warning_long"
+   		    android:layout_width="fill_parent"
+   		    android:layout_height="wrap_content"
+   		    android:textColor="@color/form_text"
+   		    />
+   		
+   		<TextView
+   		    android:layout_marginTop="@dimen/common_margin"
    		    android:text="@string/todo_list"
    		    android:layout_width="fill_parent"
    		    android:layout_height="wrap_content"

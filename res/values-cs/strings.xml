@@ -83,7 +83,7 @@
     <!-- About -->
     <string name="todo_list">Plán do dalších verzí</string>
     <string name="manual">Program slouží pro lokalizaci telefonu A pomocí jeho GPS modulu, speciální SMS z telefonu B a generované SMS odpovědi z telefonu A. Nejprve musíte nainstalovat aplikaci do obou mobilů a u A povolit GPS. Kdykoli potom můžete tímto programem poslat speciální SMS z B do A. Program v A ji rozpozná, automaticky zpracuje. Poté zapne GPS přijímač, pošle speciální SMS do B. Program SMS rozpozná a zpracuje ji tak, že zobrazí souřadnice polohy mobilu A s možností zobrazení v mapové aplikaci.</string>
-        <string name="todo_list_long">\n
+    <string name="todo_list_long">\n
 * Historie komunikace\n
 * Kontakty\n
 * Lepší zpracování dotazů - service, notifikace\n
@@ -96,4 +96,6 @@
 * Šifrování a podpis\n
 * Otroctví\n
 * Víc než jen pozice</string>
+	<string name="warning">Varování</string>
+	<string name="warning_long">Cílem programu je prozradit polohu Vašeho mobilu prostřednictvím automatické odpovědi na SMS. Počítejte s tím, že odeslání SMS Vás může něco stát v závislosti na tarifu Vašeho mobilního operátora. Počítejte i s tím, že SMS s dotazem Vám může poslat i nějaký zlý člověk - hacker, který se prolomil do mobilní sítě Vašeho operátora a klidně i z čísla nějaké placené služby. Počítejte i s tím, že SMS s dotazem Vám může poslat někdo, komu nechcete sdělit, kde zrovna jste. A počítejte i s tím, že každý program může obsahovat chyby. Pokud Vám něco z toho vadí, odinstalujte si prosím tuto aplikaci.</string>
 </resources>
