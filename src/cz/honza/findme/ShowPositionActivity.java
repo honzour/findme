@@ -2,10 +2,7 @@ package cz.honza.findme;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -50,9 +47,7 @@ public class ShowPositionActivity extends FindmeActivity {
 		open.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				 String uri = String.format(Locale.ENGLISH, "geo:%f,%f", mLat, mLon);
-				 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-				 startActivity(intent);
+				Util.openInMap(mLon, mLat, ShowPositionActivity.this);
 			}
 		});
 	}

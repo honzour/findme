@@ -28,6 +28,7 @@
     <string name="altitude">altitude</string>
     <string name="accuracy">accuracy</string>
     <string name="gps_disabled">GPS is disabled</string>
+    <string name="no_map_application">No map application</string>
 
     <!-- Reply -->
     <string-array name="reply_mode">

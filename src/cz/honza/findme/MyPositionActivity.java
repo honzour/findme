@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -94,11 +95,8 @@ public class MyPositionActivity extends FindmeActivity {
 			    	lon = mLocation.getLongitude();
 			    	lat = mLocation.getLatitude();
 			    }
-			    	
-			    String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, lon);
-			    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
 			    
-			    MyPositionActivity.this.startActivity(intent);
+			    Util.openInMap(lon, lat, MyPositionActivity.this);
 			}
 		});
     }

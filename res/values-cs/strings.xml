@@ -29,6 +29,7 @@
     <string name="altitude">výška</string>
     <string name="accuracy">přesnost</string>
     <string name="gps_disabled">GPS není povolené</string>
+    <string name="no_map_application">Žádná mapová aplikace</string>
     
     <!-- Reply -->
     <string-array name="reply_mode">

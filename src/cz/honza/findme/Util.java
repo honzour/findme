@@ -1,8 +1,12 @@
 package cz.honza.findme;
 
+import java.util.Locale;
+
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.telephony.SmsManager;
 import android.widget.Toast;
 
@@ -42,5 +46,20 @@ public class Util {
 		}
 		SmsManager manager = SmsManager.getDefault();
 		manager.sendTextMessage(number, null, message, null, null);
+	}
+	
+	public static void openInMap(double lon, double lat, Context context)
+	{
+		String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, lon);
+		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+ 
+		try
+		{
+			context.startActivity(intent);
+		}
+		catch (ActivityNotFoundException e)
+		{
+			Util.toast(R.string.no_map_application);
+		}
 	}
 }
