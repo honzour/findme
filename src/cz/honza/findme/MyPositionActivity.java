@@ -1,17 +1,12 @@
 package cz.honza.findme;
 
-import java.util.Locale;
-
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 
 public class MyPositionActivity extends FindmeActivity {
