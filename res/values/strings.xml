@@ -12,7 +12,7 @@
     <string name="fake_sms">Fake SMS</string>
     <string name="fake_sms_long">Emulate receive of an SMS. Useful for debugging and testing only.</string>
     <string name="process_outgoing_sms">Process outgoing SMS</string>
-    <string name="process_outgoing_sms_long">Every SMS send by this program will be showen in a dialog first. There will be an option Send or Cancel.</string>
+    <string name="process_outgoing_sms_long">Every SMS send by this program will be shown in a dialog first. There will be an option Send or Cancel.</string>
     
     <!-- Fake SMS -->
     <string name="common_findme_url">findme://ask?v=1&amp;a=50&amp;o=14</string>
