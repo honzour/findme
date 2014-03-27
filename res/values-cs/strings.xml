@@ -8,6 +8,7 @@
     <string name="reply_settings">Nastavení odpovědí</string>
     <string name="settings">Nastavení</string>
     <string name="about">O programu</string>
+    <string name="history">Historie</string>
     
     <!-- Settings -->
     <string name="fake_sms">Simulovaná SMS</string>

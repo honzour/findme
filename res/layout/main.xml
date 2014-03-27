@@ -31,6 +31,12 @@
         android:text="@string/settings" />
     
     <Button
+        android:id="@+id/history"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/history" />
+    
+    <Button
         android:id="@+id/about"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
