@@ -24,6 +24,7 @@ public class HistoryDatabaseHelper extends SQLiteOpenHelper {
 	static final int DB_TABLE_HISTORY_COLUMN_OUTGOING_INDEX = 4;
 	
 	public static String[] columns = {
+		DB_TABLE_HISTORY_COLUMN_ID,
 		DB_TABLE_HISTORY_COLUMN_NUMBER,
 		DB_TABLE_HISTORY_COLUMN_SMS,
         DB_TABLE_HISTORY_COLUMN_TIME,
@@ -52,7 +53,11 @@ public class HistoryDatabaseHelper extends SQLiteOpenHelper {
     public Cursor select() {
     	final SQLiteDatabase db = getReadableDatabase();
         final Cursor c = db.query(DB_TABLE_HISTORY, columns, null, null, null, null, DB_TABLE_HISTORY_COLUMN_ID);
-        db.close();
+        if (!c.moveToFirst())
+        {
+        	c.close();
+        	return null;
+        }
         return c;
     }
     
