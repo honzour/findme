@@ -2,6 +2,8 @@ package cz.honza.findme;
 
 import java.util.Calendar;
 
+import cz.honza.findme.history.HistoryItem;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
@@ -18,6 +20,7 @@ public class Handling {
 		}
 		else
 		{
+			FindMeApplication.sDbHelper.insert(new HistoryItem(from, message, Calendar.getInstance().getTimeInMillis() / 1000, false));
 			Handling.handleUri(from, uri);
 			return true;
 		}

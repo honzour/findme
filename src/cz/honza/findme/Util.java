@@ -1,6 +1,9 @@
 package cz.honza.findme;
 
+import java.util.Calendar;
 import java.util.Locale;
+
+import cz.honza.findme.history.HistoryItem;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -46,6 +49,7 @@ public class Util {
 		}
 		SmsManager manager = SmsManager.getDefault();
 		manager.sendTextMessage(number, null, message, null, null);
+		FindMeApplication.sDbHelper.insert(new HistoryItem(number, message, Calendar.getInstance().getTimeInMillis() / 1000, true));
 	}
 	
 	public static void openInMap(double lon, double lat, Context context)
