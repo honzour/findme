@@ -11,7 +11,7 @@ public class HistoryDatabaseHelper extends SQLiteOpenHelper {
 	private static final String DB_NAME = "History";
 	private static final int DB_VERSION = 1;
 	private static final String DB_TABLE_HISTORY = "History";
-	private static final String DB_TABLE_HISTORY_COLUMN_ID = "id";
+	private static final String DB_TABLE_HISTORY_COLUMN_ID = "_id";
 	private static final String DB_TABLE_HISTORY_COLUMN_NUMBER = "number";
 	private static final String DB_TABLE_HISTORY_COLUMN_SMS = "sms";
 	private static final String DB_TABLE_HISTORY_COLUMN_TIME = "time";
