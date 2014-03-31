@@ -13,7 +13,7 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class HistoryActivity extends FindmeActivity {
+public class HistoryListActivity extends FindmeActivity {
 
 	CursorAdapter mAdapter;
 	

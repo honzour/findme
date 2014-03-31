@@ -64,7 +64,7 @@
             android:name="cz.honza.findme.AboutActivity"
             android:label="@string/about" />
          <activity
-            android:name="cz.honza.findme.history.HistoryActivity"
+            android:name="cz.honza.findme.history.HistoryListActivity"
             android:label="@string/history" />
     </application>
 

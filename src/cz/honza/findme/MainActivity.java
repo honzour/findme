@@ -1,6 +1,6 @@
 package cz.honza.findme;
 
-import cz.honza.findme.history.HistoryActivity;
+import cz.honza.findme.history.HistoryListActivity;
 import android.os.Bundle;
 
 public class MainActivity extends FindmeActivity {
@@ -16,6 +16,6 @@ public class MainActivity extends FindmeActivity {
         setStartActivityView(R.id.reply_settings, ReplyActivity.class);
         setStartActivityView(R.id.settings, SettingsActivity.class);
         setStartActivityView(R.id.about, AboutActivity.class);
-        setStartActivityView(R.id.history, HistoryActivity.class);
+        setStartActivityView(R.id.history, HistoryListActivity.class);
     }
 }
