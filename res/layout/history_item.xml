@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/common_margin">
+    
+    <TextView
+        android:textSize="@dimen/big_text"
+        android:textColor="@color/form_text"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+        android:id="@+id/history_item_number"
+        android:layout_marginBottom="@dimen/common_margin"
+        />
+    
+    <TextView
+        android:textColor="@color/form_text"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+        android:id="@+id/history_item_message"
+        android:layout_marginBottom="@dimen/common_margin"
+        />
+    
+    <TextView
+        android:textColor="@color/form_text"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+        android:id="@+id/history_item_dirction"
+        />
+
+</LinearLayout>
