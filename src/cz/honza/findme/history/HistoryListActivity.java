@@ -21,7 +21,7 @@ public class HistoryListActivity extends FindmeActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.history);
+        setContentView(R.layout.history_list);
         final ListView list = (ListView)findViewById(R.id.history_list);
         
         mAdapter = new CursorAdapter(this, FindMeApplication.sDbHelper.select(), true) {
