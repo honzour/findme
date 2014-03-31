@@ -4,6 +4,7 @@ import cz.honza.findme.FindMeApplication;
 import cz.honza.findme.FindmeActivity;
 import cz.honza.findme.R;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -43,6 +44,14 @@ public class HistoryListActivity extends FindmeActivity {
 				number.setText(hi.mNumber);
 				message.setText(hi.mSms);
 				direction.setText(hi.mOutgoing ? R.string.outgoing : R.string.incoming);
+				view.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						Intent intent = new Intent(HistoryListActivity.this, HistoryDetailActivity.class);
+						intent.putExtra(HistoryDetailActivity.EXTRA_ID, hi.mId);
+						startActivity(intent);
+					}
+				});
 			}
 		};
 		
