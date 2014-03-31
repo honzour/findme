@@ -49,7 +49,7 @@ public class Util {
 		}
 		SmsManager manager = SmsManager.getDefault();
 		manager.sendTextMessage(number, null, message, null, null);
-		FindMeApplication.sDbHelper.insert(new HistoryItem(number, message, Calendar.getInstance().getTimeInMillis() / 1000, true));
+		FindMeApplication.sDbHelper.insert(new HistoryItem(0, number, message, Calendar.getInstance().getTimeInMillis() / 1000, true));
 	}
 	
 	public static void openInMap(double lon, double lat, Context context)
