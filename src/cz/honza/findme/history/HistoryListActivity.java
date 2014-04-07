@@ -24,7 +24,12 @@ public class HistoryListActivity extends FindmeActivity {
         setContentView(R.layout.history_list);
         final ListView list = (ListView)findViewById(R.id.history_list);
         
-        mAdapter = new CursorAdapter(this, FindMeApplication.sDbHelper.select(), true) {
+        final Cursor c = FindMeApplication.sDbHelper.select();
+        if (c == null || c.getCount() == 0)
+        {
+        	findViewById(R.id.history_no_record).setVisibility(View.VISIBLE);
+        }
+        mAdapter = new CursorAdapter(this, c, true) {
         	
 			@Override
 			public View newView(Context context, Cursor cursor, ViewGroup parent) {
@@ -56,5 +61,6 @@ public class HistoryListActivity extends FindmeActivity {
 		};
 		
 		list.setAdapter(mAdapter);
+		
     }
 }

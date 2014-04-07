@@ -98,7 +98,9 @@
     <string name="manual">This program can be used for loacalisation of a phone A by its GPS module, special SMS from a phone B and generated SMS reply from the phone A. You must install the app to both phones and enable GPS in A. You will be able any time later to send a SMS from  B do A. The app in A will detect it, turn on GPS, sends a SMS to B. The app in B will detect it and show GPS coordinates of A with an option to show it in an external map application.</string>
 	<string name="warning">Warning</string>
 	<string name="warning_long">This app is designed to tell somebody your location by a SMS reply. Please note that sending a SMS normally costs some money (the price depends on your mobile provider). Please note that the person sending SMS query may be not your friend, it may be some hacker which has broken security of your mobile provider network, it may be an extra payed number and it also may be somebody who shlould not know your location. Please also note that every app code (including this one) may contain errors. If you do not accept this, please uninstall this app.</string>
+	
 		<!-- History -->
 	<string name="incoming">Incoming</string>
 	<string name="outgoing">Outgoing</string>
+	<string name="no_records">No records</string>
 </resources>

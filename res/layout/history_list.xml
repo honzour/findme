@@ -1,13 +1,24 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="@color/form_background">
-    <ListView
-        android:id="@+id/history_list"
-        android:layout_width="fill_parent"
-    	android:layout_height="fill_parent"
-        />
-</LinearLayout>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+ 	xmlns:tools="http://schemas.android.com/tools"
+   	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/form_background"
+    >
+   	<ListView
+       	android:id="@+id/history_list"
+       	android:layout_width="fill_parent"
+   		android:layout_height="fill_parent"
+       	/>
+   	<TextView
+   	    android:visibility="gone"
+   	    android:id="@+id/history_no_record"
+   	    android:layout_width="fill_parent"
+   		android:layout_height="fill_parent"
+   		android:gravity="center"
+   		android:textColor="@color/form_text"
+   		android:textSize="@dimen/big_text"
+   		android:text="@string/no_records"
+   	    />
+</FrameLayout>
+
