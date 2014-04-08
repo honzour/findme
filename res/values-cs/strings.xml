@@ -105,4 +105,7 @@
 	<string name="incoming">Příchozí</string>
 	<string name="outgoing">Odchozí</string>
 	<string name="no_records">Žádné záznamy</string>
+	<string name="query">Otázka</string>
+	<string name="reply">Odpověď</string>
+	<string name="unknown_type">Neznámý typ</string>
 </resources>

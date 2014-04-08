@@ -1,8 +1,5 @@
 package cz.honza.findme.history;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import cz.honza.findme.FindMeApplication;
 import cz.honza.findme.R;
 import android.app.Activity;
@@ -30,11 +27,6 @@ public class HistoryDetailActivity extends Activity {
 		number.setText(item.mNumber);
 		message.setText(item.mSms);
 		direction.setText(item.mOutgoing ? R.string.outgoing : R.string.incoming);
-
-		Date date = new Date(item.mTime * 1000);
-		String dateText = new SimpleDateFormat(getResources().getString(R.string.time_format)).format(date);
-		time.setText(dateText);
-		
+		time.setText(item.getTimeString());
 	}
-
 }

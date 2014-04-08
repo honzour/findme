@@ -103,4 +103,7 @@
 	<string name="incoming">Incoming</string>
 	<string name="outgoing">Outgoing</string>
 	<string name="no_records">No records</string>
+	<string name="query">Query</string>
+	<string name="reply">Reply</string>
+	<string name="unknown_type">Unknown type</string>
 </resources>

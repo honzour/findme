@@ -45,10 +45,12 @@ public class HistoryListActivity extends FindmeActivity {
 				final TextView number = (TextView)view.findViewById(R.id.history_item_number);
 				final TextView message = (TextView)view.findViewById(R.id.history_item_message);
 				final TextView direction = (TextView)view.findViewById(R.id.history_item_dirction);
+				final TextView time = (TextView)view.findViewById(R.id.history_item_time);
 				final HistoryItem hi = HistoryItem.fromCursor(cursor);
 				number.setText(hi.mNumber);
-				message.setText(hi.mSms);
+				message.setText(HistoryItem.getTypeResource(hi.getType()));
 				direction.setText(hi.mOutgoing ? R.string.outgoing : R.string.incoming);
+				time.setText(hi.getTimeString());
 				view.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {

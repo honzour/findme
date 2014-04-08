@@ -20,22 +20,19 @@
         android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
         android:id="@+id/history_detail_message"
-        android:layout_marginBottom="@dimen/common_margin"
-        />
+        android:layout_marginBottom="@dimen/common_margin" />
     
     <TextView
         android:layout_marginBottom="@dimen/common_margin"
         android:textColor="@color/form_text"
         android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-        android:id="@+id/history_detail_dirction"
-        />
+        android:id="@+id/history_detail_dirction" />
     
     <TextView
         android:textColor="@color/form_text"
         android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-        android:id="@+id/history_detail_time"
-        />
+        android:id="@+id/history_detail_time" />
 
 </LinearLayout>
