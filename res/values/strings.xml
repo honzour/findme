@@ -99,11 +99,14 @@
 	<string name="warning">Warning</string>
 	<string name="warning_long">This app is designed to tell somebody your location by a SMS reply. Please note that sending a SMS normally costs some money (the price depends on your mobile provider). Please note that the person sending SMS query may be not your friend, it may be some hacker which has broken security of your mobile provider network, it may be an extra payed number and it also may be somebody who shlould not know your location. Please also note that every app code (including this one) may contain errors. If you do not accept this, please uninstall this app.</string>
 	
-		<!-- History -->
-	<string name="incoming">Incoming</string>
-	<string name="outgoing">Outgoing</string>
+	<!-- History -->
+	<string name="incoming">incoming</string>
+	<string name="outgoing">outgoing</string>
 	<string name="no_records">No records</string>
-	<string name="query">Query</string>
-	<string name="reply">Reply</string>
+	<string name="query">query</string>
+	<string name="reply">reply</string>
 	<string name="unknown_type">Unknown type</string>
+	<string name="phone_number">phone number</string>
+	<string name="full_text">full text</string>
+	<string name="direction">direction</string>
 </resources>

@@ -1,38 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
     android:padding="@dimen/common_margin"
     android:background="@color/form_background">
     
-    <TextView
-        android:textSize="@dimen/big_text"
-        android:textColor="@color/form_text"
+    <TableLayout
         android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-        android:id="@+id/history_detail_number"
-        android:layout_marginBottom="@dimen/common_margin"
-        />
+    	android:layout_height="fill_parent" >
+        
+        <TableRow
+            android:layout_marginBottom="@dimen/common_margin" >
+            <TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:text="@string/phone_number"
+        		android:layout_marginRight="@dimen/common_margin" />
+    		<TextView
+        		android:textSize="@dimen/big_text"
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:id="@+id/history_detail_number"	/>
+    	</TableRow>
+    	
+    	<TableRow
+    	    android:layout_marginBottom="@dimen/common_margin" >
+    	    <TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:text="@string/full_text"
+        		android:layout_marginRight="@dimen/common_margin" />
+      		<TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:id="@+id/history_detail_message" />
+    	</TableRow>
+    	
+        <TableRow
+            android:layout_marginBottom="@dimen/common_margin" >
+            <TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:text="@string/direction"
+        		android:layout_marginRight="@dimen/common_margin" />
+       		<TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:id="@+id/history_detail_dirction" />
+       	</TableRow>
+       		
+  		<TableRow
+  		    android:layout_marginBottom="@dimen/common_margin" >
+  		    <TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:text="@string/time"
+        		android:layout_marginRight="@dimen/common_margin" />
+    		<TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:id="@+id/history_detail_time" />
+    	</TableRow>
     
-    <TextView
-        android:textColor="@color/form_text"
-        android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-        android:id="@+id/history_detail_message"
-        android:layout_marginBottom="@dimen/common_margin" />
-    
-    <TextView
-        android:layout_marginBottom="@dimen/common_margin"
-        android:textColor="@color/form_text"
-        android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-        android:id="@+id/history_detail_dirction" />
-    
-    <TextView
-        android:textColor="@color/form_text"
-        android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-        android:id="@+id/history_detail_time" />
-
-</LinearLayout>
+    </TableLayout>
+</ScrollView>
