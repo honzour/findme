@@ -29,7 +29,7 @@ public class Util {
 		return FindMeApplication.sInstance.getSharedPreferences(Preferences.PRORAM_SETTINGS, Context.MODE_PRIVATE);
 	}
 	
-	protected static void sendSMS(String number, String message, boolean direct)
+	public static void sendSMS(String number, String message, boolean direct)
 	{
 		if (!direct)
 		{

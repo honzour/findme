@@ -3,6 +3,7 @@ package cz.honza.findme.history;
 import cz.honza.findme.FindMeApplication;
 import cz.honza.findme.Handling;
 import cz.honza.findme.R;
+import cz.honza.findme.Util;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +19,13 @@ public class HistoryDetailActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			Handling.handleUri(mItem.mNumber, Uri.parse(mItem.mSms));			
+		}
+	};
+	
+	private View.OnClickListener mSendAgain = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Util.sendSMS(mItem.mNumber, mItem.mSms, false);			
 		}
 	};
 
@@ -49,7 +57,7 @@ public class HistoryDetailActivity extends Activity {
 		if (mItem.mOutgoing)
 		{
 			button1.setText(R.string.send_again);
-			// TODO onClickListener 1 - send again
+			button1.setOnClickListener(mSendAgain);
 			if (mItem.getType() == HistoryItem.TYPE_REPLY)
 			{
 				button2.setVisibility(View.VISIBLE);
