@@ -29,14 +29,13 @@ public class HistoryListActivity extends FindmeActivity {
         {
         	findViewById(R.id.history_no_record).setVisibility(View.VISIBLE);
         }
-        mAdapter = new CursorAdapter(this, c, true) {
+        mAdapter = new CursorAdapter(this, c) {
         	
 			@Override
 			public View newView(Context context, Cursor cursor, ViewGroup parent) {
 				LayoutInflater inflater = (LayoutInflater)context.getSystemService
 					      (Context.LAYOUT_INFLATER_SERVICE);
 				View v = inflater.inflate(R.layout.history_item, null);
-				bindView(v, context, cursor);
 				return v;
 			}
 			
