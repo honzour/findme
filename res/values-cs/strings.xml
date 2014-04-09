@@ -111,4 +111,8 @@
 	<string name="phone_number">číslo</string>
 	<string name="full_text">text</string>
 	<string name="direction">směr</string>
+	<string name="send_again">Poslat znovu</string>
+	<string name="show_again">Ukázat znovu</string>
+	<string name="handle_again">Zpracovat znovu</string>
+	<string name="type">typ</string>
 </resources>

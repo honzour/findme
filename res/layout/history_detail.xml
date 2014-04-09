@@ -54,6 +54,21 @@
     			android:layout_height="wrap_content"
         		android:id="@+id/history_detail_dirction" />
        	</TableRow>
+       	
+        <TableRow
+            android:layout_marginBottom="@dimen/common_margin" >
+            <TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:text="@string/type"
+        		android:layout_marginRight="@dimen/common_margin" />
+       		<TextView
+        		android:textColor="@color/form_text"
+        		android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+        		android:id="@+id/history_detail_type" />
+       	</TableRow>
        		
   		<TableRow
   		    android:layout_marginBottom="@dimen/common_margin" >

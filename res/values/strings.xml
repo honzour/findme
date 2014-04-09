@@ -109,4 +109,8 @@
 	<string name="phone_number">phone number</string>
 	<string name="full_text">full text</string>
 	<string name="direction">direction</string>
+	<string name="send_again">Send again</string>
+	<string name="show_again">Show again</string>
+	<string name="handle_again">Handle again</string>
+	<string name="type">type</string>
 </resources>
