@@ -51,7 +51,7 @@ public class HistoryItem {
 	{
 		try
 		{
-			final Uri uri = FindMeUrl.uriFromSms(mSms);
+			final Uri uri = Uri.parse(mSms);
 			final String host = uri.getHost();
 			if (host.equals(FindMeUrl.ACTION_ASK))
 			{
