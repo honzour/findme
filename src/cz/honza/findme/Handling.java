@@ -21,7 +21,7 @@ public class Handling {
 		else
 		{
 			FindMeApplication.sDbHelper.insert(new HistoryItem(0, from, message, Calendar.getInstance().getTimeInMillis() / 1000, false));
-			Handling.handleUri(from, uri);
+			handleUri(from, uri);
 			return true;
 		}
 	}
