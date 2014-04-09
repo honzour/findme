@@ -70,5 +70,16 @@
         		android:id="@+id/history_detail_time" />
     	</TableRow>
     
+	    <Button
+	        android:id="@+id/history_detail_button1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"/>
+	    
+	    <Button
+	        android:id="@+id/history_detail_button2"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:visibility="gone"/>
+	    
     </TableLayout>
 </ScrollView>
