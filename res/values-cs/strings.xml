@@ -83,10 +83,13 @@
     <string name="do_not_send">Neposílat</string>
     
     <!-- About -->
+    <string name="changelog">Změny</string>
+    <string name="changelog_long">\n
+Verze 2.0\n\n
+* Historie komunikace</string>
     <string name="todo_list">Plán do dalších verzí</string>
     <string name="manual">Program slouží pro lokalizaci telefonu A pomocí jeho GPS modulu, speciální SMS z telefonu B a generované SMS odpovědi z telefonu A. Nejprve musíte nainstalovat aplikaci do obou mobilů a u A povolit GPS. Kdykoli potom můžete tímto programem poslat speciální SMS z B do A. Program v A ji rozpozná, automaticky zpracuje. Poté zapne GPS přijímač, pošle speciální SMS do B. Program SMS rozpozná a zpracuje ji tak, že zobrazí souřadnice polohy mobilu A s možností zobrazení v mapové aplikaci.</string>
     <string name="todo_list_long">\n
-* Historie komunikace\n
 * Kontakty\n
 * Lepší zpracování dotazů - service, notifikace\n
 * Pozice i jinak než přes GPS\n

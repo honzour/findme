@@ -81,9 +81,12 @@
     <string name="do_not_send">Don\'t sent</string>
     
     <!-- About -->
+    <string name="changelog">Changelog</string>
+    <string name="changelog_long">\n
+Version 2.0\n\n
+* History</string>
     <string name="todo_list">TODO list</string>
     <string name="todo_list_long">\n
-* History of communication\n
 * Contacts integration\n
 * Better request handling - service, notification\n
 * Other then GPS location sources\n
