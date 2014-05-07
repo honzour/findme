@@ -1,12 +1,18 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/form_background" >
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@color/form_background">
+    android:gravity="center" >
 
     <Button
+        android:layout_marginTop="@dimen/common_margin"
         android:id="@+id/my_position"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -43,3 +49,4 @@
         android:text="@string/about" />
         
 </LinearLayout>
+</ScrollView>
