@@ -4,7 +4,7 @@
     <!-- Main Activity -->
     <string name="app_name">Najdi mě</string>
     <string name="my_position">Moje pozice</string>
-    <string name="ask_settings">Otázky</string>
+    <string name="ask_settings">Najdi jiný mobil</string>
     <string name="reply_settings">Nastavení odpovědí</string>
     <string name="settings">Nastavení</string>
     <string name="about">O programu</string>

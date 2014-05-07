@@ -10,15 +10,9 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:gravity="center" >
-
-    <Button
-        android:layout_marginTop="@dimen/common_margin"
-        android:id="@+id/my_position"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/my_position" />
     
     <Button
+        android:layout_marginTop="@dimen/common_margin"
         android:id="@+id/ask_settings"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -29,6 +23,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/reply_settings" />
+
+    <Button
+        android:id="@+id/my_position"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/my_position" />
     
     <Button
         android:id="@+id/settings"
